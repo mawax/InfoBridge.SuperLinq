@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<appSettings>
+  <add key="SoAppToken" value=""/>
+  <add key="SoBaseUrl" value=""/>
+  <add key="SoUser" value=""/>
+  <add key="SoPass" value=""/>
+</appSettings>

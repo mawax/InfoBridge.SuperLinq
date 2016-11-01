@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>InfoBridge.SuperLinq</id>
+    <version>$version$</version>
+    <title>SuperLinq</title>
+    <authors>Matthijs Wagemakers</authors>
+    <licenseUrl>https://github.com/mawax/InfoBridge.SuperLinq/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mawax/InfoBridge.SuperLinq</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Primarily SuperLinq is a LINQ provider for the NetServer Web Services, more specially for the ArchiveAgent. By default it utilizes the dynamic archive provider to query any table in the SuperOffice database but it can actually be used to query any archive provider.</description>
+    <releaseNotes>1.0.0 Initial release</releaseNotes>
+    <tags>SuperOffice SuperLinq</tags>
+  </metadata>
+</package>
