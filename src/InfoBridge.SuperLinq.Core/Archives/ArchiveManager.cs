@@ -125,7 +125,7 @@ namespace InfoBridge.SuperLinq.Core.Archives
                 var type = parsedValue.GetType();
                 if (type == typeof(DateTime))
                 {
-                    if (!executionContext.DateTimeToUTC && column.UseRaw)
+                    if (!executionContext.DateTimeToUTC || column.UseRaw)
                     {
                         parsedValue = (DateTime)parsedValue;
                     }
