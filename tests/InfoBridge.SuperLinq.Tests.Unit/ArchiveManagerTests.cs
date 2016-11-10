@@ -36,7 +36,9 @@ namespace InfoBridge.SuperLinq.Tests.Unit
                     return ret.AddHours(6);
                 });
 
-            var man = new ArchiveManager<PropertyHelperTestCompany>(executor.Object, dateTimeConverter.Object, new ArchiveExecutionContextProvider());
+            var man = new ArchiveManager<PropertyHelperTestCompany>(executor.Object,
+                dateTimeConverter.Object,
+                new ArchiveExecutionContextProvider(action => action.DateTimeToUTC = true));
 
             var result = man.DoQuery(new LinqRestrictionBuilder<PropertyHelperTestCompany>()).FirstOrDefault();
             Assert.Equal(5, result.Id);
