@@ -9,9 +9,16 @@
     <projectUrl>https://github.com/mawax/InfoBridge.SuperLinq</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Primarily SuperLinq is a LINQ provider for the NetServer Web Services, more specially for the ArchiveAgent. By default it utilizes the dynamic archive provider to query any table in the SuperOffice database but it can actually be used to query any archive provider.</description>
-    <releaseNotes>1.0.1 fix for issue #1 utc conversion was used when not enabled 
+    <releaseNotes>
+1.0.2 
+Small bug fixes, documentation and a better base interface for models
 
-    1.0.0 Initial release</releaseNotes>
+1.0.1 
+fix for issue #1 utc conversion was used when not enabled 
+
+1.0.0 
+Initial release
+    </releaseNotes>
     <tags>SuperOffice SuperLinq</tags>
   </metadata>
 </package>
