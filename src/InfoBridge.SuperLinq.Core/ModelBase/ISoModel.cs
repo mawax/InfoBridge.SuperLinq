@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InfoBridge.SuperLinq.Core.ModelBase
 {
-    public interface ISoModel
+    public interface ISoModel : IModel
     {
         int PK { get; set; }
     }

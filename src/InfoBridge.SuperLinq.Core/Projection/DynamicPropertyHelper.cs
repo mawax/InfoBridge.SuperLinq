@@ -55,7 +55,7 @@ namespace InfoBridge.SuperLinq.Core.Projection
             return GetPropertyMapForEntity(type)[trimmedColumn];
         }
 
-        public static string GetTableName(ISoModel model)
+        public static string GetTableName(IModel model)
         {
             if (model == null) { throw new ArgumentNullException("model", "Unable to get table name: model is null"); }
             return GetTableName(model.GetType());
