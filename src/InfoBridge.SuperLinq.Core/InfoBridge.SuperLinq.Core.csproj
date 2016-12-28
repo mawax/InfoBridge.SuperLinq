@@ -28,6 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\InfoBridge.SuperLinq.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
@@ -200,6 +201,7 @@
     <Compile Include="LinqProvider\QueryGeneration.cs" />
     <Compile Include="LinqProvider\RestrictionExpressionTreeVisitor.cs" />
     <Compile Include="LinqProvider\ResultOperatorVisitor.cs" />
+    <Compile Include="ModelBase\IModel.cs" />
     <Compile Include="ModelBase\IStandardModel.cs" />
     <Compile Include="ModelBase\ISoModel.cs" />
     <Compile Include="ModelBase\StandardModelBase.cs" />

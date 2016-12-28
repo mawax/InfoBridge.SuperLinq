@@ -133,7 +133,9 @@ namespace InfoBridge.SuperLinq.CodeGen
                 provider.GenerateCodeFromCompileUnit(compileUnit, tw, new CodeGeneratorOptions());
                 tw.Close();
                 sw.Flush();
-                return sw.ToString();
+
+                string result = "#pragma warning disable 1591" + Environment.NewLine;//disable Missing XML comment warnings
+                return result + sw.ToString();
             }
         }
 
