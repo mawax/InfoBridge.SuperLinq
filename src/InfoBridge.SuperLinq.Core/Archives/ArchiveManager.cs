@@ -106,11 +106,14 @@ namespace InfoBridge.SuperLinq.Core.Archives
                 {
                     foreach (string propertyName in DynamicPropertyHelper.GetPropertyNames<T>(column))
                     {
-                        string value = item.ColumnData[column].DisplayValue;
-                        object parsedValue = CultureDataFormatter.ParseEncoded(value);
+                        if (item.ColumnData[column] != null)
+                        {
+                            string value = item.ColumnData[column].DisplayValue;
+                            object parsedValue = CultureDataFormatter.ParseEncoded(value);
 
-                        parsedValue = DoTypeSpecificConversion(executionContext, DynamicPropertyHelper.GetColumnInfo(typeof(T), propertyName), parsedValue);
-                        ObjectPropertyAccessor.SetValue(t, propertyName, parsedValue);
+                            parsedValue = DoTypeSpecificConversion(executionContext, DynamicPropertyHelper.GetColumnInfo(typeof(T), propertyName), parsedValue);
+                            ObjectPropertyAccessor.SetValue(t, propertyName, parsedValue);
+                        }
                     }
                 }
                 results.Add(t);
