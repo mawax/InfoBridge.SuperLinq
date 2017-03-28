@@ -2,7 +2,7 @@
 using InfoBridge.SuperLinq.Core.Projection;
 using InfoBridge.SuperLinq.Core.QueryBuilders;
 using SuperOffice.CRM.Globalization;
-using SuperOffice.Services75;
+using SuperOffice.CRM.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

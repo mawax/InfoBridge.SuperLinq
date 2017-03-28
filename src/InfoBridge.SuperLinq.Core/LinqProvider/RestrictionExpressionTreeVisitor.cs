@@ -1,5 +1,5 @@
 ﻿using InfoBridge.SuperLinq.Core.QueryBuilders;
-using SuperOffice.Services75;
+using SuperOffice.Data;
 using System.Linq.Expressions;
 
 namespace InfoBridge.SuperLinq.Core.LinqProvider
