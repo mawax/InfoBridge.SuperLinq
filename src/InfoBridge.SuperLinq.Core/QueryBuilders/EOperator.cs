@@ -24,6 +24,7 @@ namespace InfoBridge.SuperLinq.Core.QueryBuilders
         Is,
         NotBegins,
         IsNot,
-        NotContains
+        NotContains,
+        IsNull
     }
 }

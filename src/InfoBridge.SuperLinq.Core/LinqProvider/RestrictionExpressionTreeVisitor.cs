@@ -89,7 +89,13 @@ namespace InfoBridge.SuperLinq.Core.LinqProvider
             }
             else if (ExpressionTypeMap.OperatorMap.ContainsKey(expression.NodeType))
             {
-                _current.Operator = ExpressionTypeMap.OperatorMap[expression.NodeType];
+                // Check if this should be a null operator, else choose the mapped operator
+                if (expression.NodeType == ExpressionType.Equal && (
+                    (expression.Left is ConstantExpression && (expression.Left as ConstantExpression).Value == null) ||
+                    (expression.Right is ConstantExpression && (expression.Right as ConstantExpression).Value == null)))
+                    _current.Operator = EOperator.IsNull;
+                else
+                    _current.Operator = ExpressionTypeMap.OperatorMap[expression.NodeType];
             }
             else
             {
