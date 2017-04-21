@@ -11,7 +11,7 @@
     <description>Primarily SuperLinq is a LINQ provider for the NetServer Web Services, more specially for the ArchiveAgent. By default it utilizes the dynamic archive provider to query any table in the SuperOffice database but it can actually be used to query any archive provider.</description>
     <releaseNotes>
 1.0.3
-Small bug fixes, documentation and a better base interface for models
+Support for nullable checks and removed references to 7.5 proxies
     
 1.0.2 
 Small bug fixes, documentation and a better base interface for models
