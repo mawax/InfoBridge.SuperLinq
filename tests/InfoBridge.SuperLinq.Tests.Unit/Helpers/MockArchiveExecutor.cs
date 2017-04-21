@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SuperOffice.Services75;
 using InfoBridge.SuperLinq.Core.Archives;
+using SuperOffice.CRM.Services;
 
 namespace InfoBridge.SuperLinq.Tests.Unit.Helpers
 { 
