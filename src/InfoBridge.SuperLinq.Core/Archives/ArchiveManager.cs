@@ -18,16 +18,17 @@ namespace InfoBridge.SuperLinq.Core.Archives
         private readonly IArchiveExecutor _executor;
         private readonly IDateTimeConverter _dateTimeConverter;
         private readonly IArchiveExecutionContextProvider _archiveExecutionContextProvider;
+        private readonly IResultParser _resultParser;
 
-        public ArchiveManager(IArchiveExecutor executor, IDateTimeConverter dateTimeConverter, IArchiveExecutionContextProvider archiveExecutionContextProvider)
+        public ArchiveManager(IArchiveExecutor executor, IArchiveExecutionContextProvider archiveExecutionContextProvider, IResultParser resultParser)
         {
             if (executor == null) { throw new ArgumentNullException(nameof(executor)); }
-            if (dateTimeConverter == null) { throw new ArgumentNullException(nameof(dateTimeConverter)); }
             if (archiveExecutionContextProvider == null) { throw new ArgumentNullException(nameof(archiveExecutionContextProvider)); }
+            if (resultParser == null) { throw new ArgumentNullException(nameof(resultParser)); }
 
             _executor = executor;
-            _dateTimeConverter = dateTimeConverter;
             _archiveExecutionContextProvider = archiveExecutionContextProvider;
+            _resultParser = resultParser;
         }
 
         public T DoQuerySingle(RestrictionBuilderBase restrictionBuilder, OrderByBuilder orderByBuilder = null)
@@ -65,7 +66,7 @@ namespace InfoBridge.SuperLinq.Core.Archives
                 context.OrderBy = orderByBuilder.Get();
             }
 
-            return ParseResult(executionContext, _executor.GetItems(context, max, page));
+            return _resultParser.Parse<T>(executionContext, _executor.GetItems(context, max, page));
         }
 
         private int SetPageSizeAndGetPage(int skip, int max, ArchiveQueryParameters context)
@@ -92,53 +93,6 @@ namespace InfoBridge.SuperLinq.Core.Archives
                 context.PageSize = skip;
                 return 1;
             }
-        }
-
-        private IList<T> ParseResult(ArchiveExecutionContext executionContext, IList<ArchiveListItem> list)
-        {
-            List<T> results = new List<T>();
-            if (list == null) { return null; }
-
-            foreach (ArchiveListItem item in list)
-            {
-                T t = Activator.CreateInstance<T>();
-                foreach (string column in item.ColumnData.Keys)
-                {
-                    foreach (string propertyName in DynamicPropertyHelper.GetPropertyNames<T>(column))
-                    {
-                        if (item.ColumnData[column] != null)
-                        {
-                            string value = item.ColumnData[column].DisplayValue;
-                            object parsedValue = CultureDataFormatter.ParseEncoded(value);
-
-                            parsedValue = DoTypeSpecificConversion(executionContext, DynamicPropertyHelper.GetColumnInfo(typeof(T), propertyName), parsedValue);
-                            ObjectPropertyAccessor.SetValue(t, propertyName, parsedValue);
-                        }
-                    }
-                }
-                results.Add(t);
-            }
-            return results;
-        }
-
-        private object DoTypeSpecificConversion(ArchiveExecutionContext executionContext, ColumnInfo column, object parsedValue)
-        {
-            if (parsedValue != null)
-            {
-                var type = parsedValue.GetType();
-                if (type == typeof(DateTime))
-                {
-                    if (!executionContext.DateTimeToUTC || column.UseRaw)
-                    {
-                        parsedValue = (DateTime)parsedValue;
-                    }
-                    else
-                    {
-                        parsedValue = _dateTimeConverter.ConvertFromTimeZone(((DateTime)parsedValue).ToUniversalTime());
-                    }
-                }
-            }
-            return parsedValue;
         }
     }
 }

@@ -188,6 +188,8 @@
     <Compile Include="Archives\IArchiveExecutionContextProvider.cs" />
     <Compile Include="Archives\IArchiveExecutor.cs" />
     <Compile Include="Archives\IArchiveManager.cs" />
+    <Compile Include="Archives\IResultParser.cs" />
+    <Compile Include="Archives\ResultParser.cs" />
     <Compile Include="Attributes\ColumnInfo.cs" />
     <Compile Include="Attributes\TableInfo.cs" />
     <Compile Include="Dependencies\DependencyHelper.cs" />
