@@ -12,7 +12,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit.Helpers
     public class TestPerson : ISoModel
     {
         [ColumnInfo("id")]
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         [ColumnInfo("id")]
         public int PK { get; set; }

@@ -179,6 +179,7 @@
     <Compile Include="ArchiveExecutorTests.cs" />
     <Compile Include="ArchiveManagerTests.cs" />
     <Compile Include="DynamicPropertyHelperTests.cs" />
+    <Compile Include="Helpers\InheritingTestPerson.cs" />
     <Compile Include="Helpers\MockArchiveAgent.cs" />
     <Compile Include="Helpers\MockArchiveExecutor.cs" />
     <Compile Include="Helpers\MockArchiveManager.cs" />
