@@ -9,14 +9,14 @@ In order to get started with SuperLinq simply install the NuGet package:
 `install-package InfoBridge.SuperLinq` 
 
 Then, make sure you are authenticated with NetServer and start querying:
-```
+```c#
     List<Contact> contacts = new Queryable<Contact>()
         .Where(x => x.Name.Contains("Super"))
         .ToList();
 ```
 
 ## Documentation
-Documentation is currently not yet available.
+Check out the [wiki](https://github.com/mawax/InfoBridge.SuperLinq/wiki) for documentation and examples.
 
 ## Requirements
 .NET Framework 4.5.1
