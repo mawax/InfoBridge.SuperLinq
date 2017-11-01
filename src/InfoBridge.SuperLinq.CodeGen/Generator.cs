@@ -30,7 +30,7 @@ namespace InfoBridge.SuperLinq.CodeGen
                 TableInfo ti = TablesInfo.GetTableInfo(tableNumber);
                 if (ti != null)
                 {
-                    if (IsExcluded(ti.DbName) || (ti.Definition.Kind != TableKind.System && !ti.Definition.EJournalTable))
+                    if (IsExcluded(ti.DbName) || ti.Definition.Kind != TableKind.System)
                     {
                         continue;
                     }

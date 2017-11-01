@@ -106,5 +106,16 @@ namespace InfoBridge.SuperLinq.Tests.Unit
 
             Assert.Equal("testcompany", name);
         }
+
+        [Fact]
+        public void TestConcurrentInitialization()
+        {
+            var tasks = new List<Task<string>>();
+            for (int i = 0; i < 10; i++)
+            {
+                tasks.Add(Task.Run(() => DynamicPropertyHelper.GetColumnName<PropertyHelperTestCompany>("Name")));
+            }
+            Task.WaitAll(tasks.ToArray());
+        }
     }
 }

@@ -169,7 +169,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         {
             var manager = SetupManager<TestPerson>();
             var q = new Queryable<TestPerson>(CreateExecutor(manager));
-            var results = q.OrderBy(x => x.LastName).ToList();
+            q.OrderBy(x => x.LastName).ToList();
             var orderBy = manager.OrderByBuilder.Get();
 
             Assert.NotNull(orderBy);
@@ -183,7 +183,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         {
             var manager = SetupManager<TestPerson>();
             var q = new Queryable<TestPerson>(CreateExecutor(manager));
-            var results = q.OrderBy(x => x.LastName).OrderByDescending(x => x.Id).ToList();
+            q.OrderBy(x => x.LastName).OrderByDescending(x => x.Id).ToList();
             var orderBy = manager.OrderByBuilder.Get();
 
             Assert.NotNull(orderBy);
@@ -193,6 +193,18 @@ namespace InfoBridge.SuperLinq.Tests.Unit
             Assert.Equal("testperson.id", orderBy[1].Name);
             Assert.Equal(OrderBySortType.DESC, orderBy[1].Direction);
         }
+
+        [Fact]
+        public void TestOrderByOnInherited()
+        {
+            var manager = SetupManager<InheritingTestPerson>();
+            var q = new Queryable<InheritingTestPerson>(CreateExecutor(manager));
+            q.OrderBy(x => x.Id).ToList();
+            var orderBy = manager.OrderByBuilder.Get();
+
+            Assert.Equal("inheritingtestperson.newid", orderBy[0].Name);
+        }
+
         [Fact]
         public void TestNull1()
         {
