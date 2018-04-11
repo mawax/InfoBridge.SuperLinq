@@ -17522,7 +17522,7 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _updatedCount;
 
-        private int _family_id;
+        private int _CategoryFamily_id;
 
         [ColumnInfo("Category_id")]
         public int CategoryId
@@ -17667,16 +17667,16 @@ namespace InfoBridge.SuperLinq.Core.Models
             }
         }
 
-        [ColumnInfo("family_id")]
-        public int FamilyId
+        [ColumnInfo("CategoryFamily_id")]
+        public int CategoryFamilyId
         {
             get
             {
-                return this._family_id;
+                return this._CategoryFamily_id;
             }
             set
             {
-                this._family_id = value;
+                this._CategoryFamily_id = value;
             }
         }
     }
@@ -29147,6 +29147,10 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _quoteDocType;
 
+        private int _privacyDocType;
+
+        private string _emailSubject;
+
         [ColumnInfo("DocTmpl_id")]
         public int DocTmplId
         {
@@ -29482,6 +29486,32 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._quoteDocType = value;
+            }
+        }
+
+        [ColumnInfo("privacyDocType")]
+        public int PrivacyDocType
+        {
+            get
+            {
+                return this._privacyDocType;
+            }
+            set
+            {
+                this._privacyDocType = value;
+            }
+        }
+
+        [ColumnInfo("emailSubject")]
+        public string EmailSubject
+        {
+            get
+            {
+                return this._emailSubject;
+            }
+            set
+            {
+                this._emailSubject = value;
             }
         }
     }
@@ -78179,7 +78209,7 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _active_pane;
 
-        private int _mailingtype_id;
+        private int _shipmenttype_id;
 
         [ColumnInfo("id")]
         public int Id
@@ -78597,16 +78627,16 @@ namespace InfoBridge.SuperLinq.Core.Models
             }
         }
 
-        [ColumnInfo("mailingtype_id")]
-        public int MailingtypeId
+        [ColumnInfo("shipmenttype_id")]
+        public int ShipmenttypeId
         {
             get
             {
-                return this._mailingtype_id;
+                return this._shipmenttype_id;
             }
             set
             {
-                this._mailingtype_id = value;
+                this._shipmenttype_id = value;
             }
         }
     }
@@ -81307,6 +81337,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _type;
 
+        private string _rfc822_content;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -81512,6 +81544,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._type = value;
+            }
+        }
+
+        [ColumnInfo("rfc822_content")]
+        public string Rfc822Content
+        {
+            get
+            {
+                return this._rfc822_content;
+            }
+            set
+            {
+                this._rfc822_content = value;
             }
         }
     }
@@ -84063,6 +84108,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _long_description;
 
+        private int _extra_menus_id;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -84177,6 +84224,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._long_description = value;
+            }
+        }
+
+        [ColumnInfo("extra_menus_id")]
+        public int ExtraMenusId
+        {
+            get
+            {
+                return this._extra_menus_id;
+            }
+            set
+            {
+                this._extra_menus_id = value;
             }
         }
     }
@@ -96191,961 +96251,6 @@ namespace InfoBridge.SuperLinq.Core.Models
         }
     }
 
-    [TableInfo("consent_purpose")]
-    public class ConsentPurpose : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
-    {
-
-        private int _consent_purpose_id;
-
-        private int _PK;
-
-        private string _name;
-
-        private string _description;
-
-        private string _key;
-
-        private string _consent_text;
-
-        private int _active;
-
-        private System.DateTime _registered;
-
-        private int _registered_associate_id;
-
-        private System.DateTime _updated;
-
-        private int _updated_associate_id;
-
-        private int _updatedCount;
-
-        private int _rank;
-
-        private int _deleted;
-
-        private string _privacy_statement_desc;
-
-        private string _privacy_statement_url;
-
-        [ColumnInfo("consent_purpose_id")]
-        public int ConsentPurposeId
-        {
-            get
-            {
-                return this._consent_purpose_id;
-            }
-            set
-            {
-                this._consent_purpose_id = value;
-            }
-        }
-
-        [ColumnInfo("consent_purpose_id")]
-        public int PK
-        {
-            get
-            {
-                return this._PK;
-            }
-            set
-            {
-                this._PK = value;
-            }
-        }
-
-        [ColumnInfo("name")]
-        public string Name
-        {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                this._name = value;
-            }
-        }
-
-        [ColumnInfo("description")]
-        public string Description
-        {
-            get
-            {
-                return this._description;
-            }
-            set
-            {
-                this._description = value;
-            }
-        }
-
-        [ColumnInfo("key")]
-        public string Key
-        {
-            get
-            {
-                return this._key;
-            }
-            set
-            {
-                this._key = value;
-            }
-        }
-
-        [ColumnInfo("consent_text")]
-        public string ConsentText
-        {
-            get
-            {
-                return this._consent_text;
-            }
-            set
-            {
-                this._consent_text = value;
-            }
-        }
-
-        [ColumnInfo("active")]
-        public int Active
-        {
-            get
-            {
-                return this._active;
-            }
-            set
-            {
-                this._active = value;
-            }
-        }
-
-        [ColumnInfo("registered")]
-        public System.DateTime Registered
-        {
-            get
-            {
-                return this._registered;
-            }
-            set
-            {
-                this._registered = value;
-            }
-        }
-
-        [ColumnInfo("registered_associate_id")]
-        public int RegisteredAssociateId
-        {
-            get
-            {
-                return this._registered_associate_id;
-            }
-            set
-            {
-                this._registered_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updated")]
-        public System.DateTime Updated
-        {
-            get
-            {
-                return this._updated;
-            }
-            set
-            {
-                this._updated = value;
-            }
-        }
-
-        [ColumnInfo("updated_associate_id")]
-        public int UpdatedAssociateId
-        {
-            get
-            {
-                return this._updated_associate_id;
-            }
-            set
-            {
-                this._updated_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updatedCount")]
-        public int UpdatedCount
-        {
-            get
-            {
-                return this._updatedCount;
-            }
-            set
-            {
-                this._updatedCount = value;
-            }
-        }
-
-        [ColumnInfo("rank")]
-        public int Rank
-        {
-            get
-            {
-                return this._rank;
-            }
-            set
-            {
-                this._rank = value;
-            }
-        }
-
-        [ColumnInfo("deleted")]
-        public int Deleted
-        {
-            get
-            {
-                return this._deleted;
-            }
-            set
-            {
-                this._deleted = value;
-            }
-        }
-
-        [ColumnInfo("privacy_statement_desc")]
-        public string PrivacyStatementDesc
-        {
-            get
-            {
-                return this._privacy_statement_desc;
-            }
-            set
-            {
-                this._privacy_statement_desc = value;
-            }
-        }
-
-        [ColumnInfo("privacy_statement_url")]
-        public string PrivacyStatementUrl
-        {
-            get
-            {
-                return this._privacy_statement_url;
-            }
-            set
-            {
-                this._privacy_statement_url = value;
-            }
-        }
-    }
-
-    [TableInfo("consent_person")]
-    public class ConsentPerson : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
-    {
-
-        private int _consent_person_id;
-
-        private int _PK;
-
-        private int _person_id;
-
-        private int _consent_purpose_id;
-
-        private System.DateTime _valid_from;
-
-        private System.DateTime _registered;
-
-        private int _registered_associate_id;
-
-        private System.DateTime _updated;
-
-        private int _updated_associate_id;
-
-        private int _updatedCount;
-
-        private int _LegalBase_id;
-
-        private int _ConsentSource_id;
-
-        private string _comment;
-
-        [ColumnInfo("consent_person_id")]
-        public int ConsentPersonId
-        {
-            get
-            {
-                return this._consent_person_id;
-            }
-            set
-            {
-                this._consent_person_id = value;
-            }
-        }
-
-        [ColumnInfo("consent_person_id")]
-        public int PK
-        {
-            get
-            {
-                return this._PK;
-            }
-            set
-            {
-                this._PK = value;
-            }
-        }
-
-        [ColumnInfo("person_id")]
-        public int PersonId
-        {
-            get
-            {
-                return this._person_id;
-            }
-            set
-            {
-                this._person_id = value;
-            }
-        }
-
-        [ColumnInfo("consent_purpose_id")]
-        public int ConsentPurposeId
-        {
-            get
-            {
-                return this._consent_purpose_id;
-            }
-            set
-            {
-                this._consent_purpose_id = value;
-            }
-        }
-
-        [ColumnInfo("valid_from")]
-        public System.DateTime ValidFrom
-        {
-            get
-            {
-                return this._valid_from;
-            }
-            set
-            {
-                this._valid_from = value;
-            }
-        }
-
-        [ColumnInfo("registered")]
-        public System.DateTime Registered
-        {
-            get
-            {
-                return this._registered;
-            }
-            set
-            {
-                this._registered = value;
-            }
-        }
-
-        [ColumnInfo("registered_associate_id")]
-        public int RegisteredAssociateId
-        {
-            get
-            {
-                return this._registered_associate_id;
-            }
-            set
-            {
-                this._registered_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updated")]
-        public System.DateTime Updated
-        {
-            get
-            {
-                return this._updated;
-            }
-            set
-            {
-                this._updated = value;
-            }
-        }
-
-        [ColumnInfo("updated_associate_id")]
-        public int UpdatedAssociateId
-        {
-            get
-            {
-                return this._updated_associate_id;
-            }
-            set
-            {
-                this._updated_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updatedCount")]
-        public int UpdatedCount
-        {
-            get
-            {
-                return this._updatedCount;
-            }
-            set
-            {
-                this._updatedCount = value;
-            }
-        }
-
-        [ColumnInfo("LegalBase_id")]
-        public int LegalBaseId
-        {
-            get
-            {
-                return this._LegalBase_id;
-            }
-            set
-            {
-                this._LegalBase_id = value;
-            }
-        }
-
-        [ColumnInfo("ConsentSource_id")]
-        public int ConsentSourceId
-        {
-            get
-            {
-                return this._ConsentSource_id;
-            }
-            set
-            {
-                this._ConsentSource_id = value;
-            }
-        }
-
-        [ColumnInfo("comment")]
-        public string Comment
-        {
-            get
-            {
-                return this._comment;
-            }
-            set
-            {
-                this._comment = value;
-            }
-        }
-    }
-
-    [TableInfo("category_family")]
-    public class CategoryFamily : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
-    {
-
-        private int _category_family_id;
-
-        private int _PK;
-
-        private string _name;
-
-        private string _description;
-
-        private System.DateTime _registered;
-
-        private int _registered_associate_id;
-
-        private System.DateTime _updated;
-
-        private int _updated_associate_id;
-
-        private int _updatedCount;
-
-        [ColumnInfo("category_family_id")]
-        public int CategoryFamilyId
-        {
-            get
-            {
-                return this._category_family_id;
-            }
-            set
-            {
-                this._category_family_id = value;
-            }
-        }
-
-        [ColumnInfo("category_family_id")]
-        public int PK
-        {
-            get
-            {
-                return this._PK;
-            }
-            set
-            {
-                this._PK = value;
-            }
-        }
-
-        [ColumnInfo("name")]
-        public string Name
-        {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                this._name = value;
-            }
-        }
-
-        [ColumnInfo("description")]
-        public string Description
-        {
-            get
-            {
-                return this._description;
-            }
-            set
-            {
-                this._description = value;
-            }
-        }
-
-        [ColumnInfo("registered")]
-        public System.DateTime Registered
-        {
-            get
-            {
-                return this._registered;
-            }
-            set
-            {
-                this._registered = value;
-            }
-        }
-
-        [ColumnInfo("registered_associate_id")]
-        public int RegisteredAssociateId
-        {
-            get
-            {
-                return this._registered_associate_id;
-            }
-            set
-            {
-                this._registered_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updated")]
-        public System.DateTime Updated
-        {
-            get
-            {
-                return this._updated;
-            }
-            set
-            {
-                this._updated = value;
-            }
-        }
-
-        [ColumnInfo("updated_associate_id")]
-        public int UpdatedAssociateId
-        {
-            get
-            {
-                return this._updated_associate_id;
-            }
-            set
-            {
-                this._updated_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updatedCount")]
-        public int UpdatedCount
-        {
-            get
-            {
-                return this._updatedCount;
-            }
-            set
-            {
-                this._updatedCount = value;
-            }
-        }
-    }
-
-    [TableInfo("LegalBase")]
-    public class LegalBase : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
-    {
-
-        private int _legalbase_id;
-
-        private int _PK;
-
-        private string _name;
-
-        private string _tooltip;
-
-        private int _rank;
-
-        private int _deleted;
-
-        private System.DateTime _registered;
-
-        private int _registered_associate_id;
-
-        private System.DateTime _updated;
-
-        private int _updated_associate_id;
-
-        private int _updatedCount;
-
-        private string _key;
-
-        [ColumnInfo("legalbase_id")]
-        public int LegalbaseId
-        {
-            get
-            {
-                return this._legalbase_id;
-            }
-            set
-            {
-                this._legalbase_id = value;
-            }
-        }
-
-        [ColumnInfo("legalbase_id")]
-        public int PK
-        {
-            get
-            {
-                return this._PK;
-            }
-            set
-            {
-                this._PK = value;
-            }
-        }
-
-        [ColumnInfo("name")]
-        public string Name
-        {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                this._name = value;
-            }
-        }
-
-        [ColumnInfo("tooltip")]
-        public string Tooltip
-        {
-            get
-            {
-                return this._tooltip;
-            }
-            set
-            {
-                this._tooltip = value;
-            }
-        }
-
-        [ColumnInfo("rank")]
-        public int Rank
-        {
-            get
-            {
-                return this._rank;
-            }
-            set
-            {
-                this._rank = value;
-            }
-        }
-
-        [ColumnInfo("deleted")]
-        public int Deleted
-        {
-            get
-            {
-                return this._deleted;
-            }
-            set
-            {
-                this._deleted = value;
-            }
-        }
-
-        [ColumnInfo("registered")]
-        public System.DateTime Registered
-        {
-            get
-            {
-                return this._registered;
-            }
-            set
-            {
-                this._registered = value;
-            }
-        }
-
-        [ColumnInfo("registered_associate_id")]
-        public int RegisteredAssociateId
-        {
-            get
-            {
-                return this._registered_associate_id;
-            }
-            set
-            {
-                this._registered_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updated")]
-        public System.DateTime Updated
-        {
-            get
-            {
-                return this._updated;
-            }
-            set
-            {
-                this._updated = value;
-            }
-        }
-
-        [ColumnInfo("updated_associate_id")]
-        public int UpdatedAssociateId
-        {
-            get
-            {
-                return this._updated_associate_id;
-            }
-            set
-            {
-                this._updated_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updatedCount")]
-        public int UpdatedCount
-        {
-            get
-            {
-                return this._updatedCount;
-            }
-            set
-            {
-                this._updatedCount = value;
-            }
-        }
-
-        [ColumnInfo("key")]
-        public string Key
-        {
-            get
-            {
-                return this._key;
-            }
-            set
-            {
-                this._key = value;
-            }
-        }
-    }
-
-    [TableInfo("ConsentSource")]
-    public class ConsentSource : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
-    {
-
-        private int _consentsource_id;
-
-        private int _PK;
-
-        private string _name;
-
-        private string _tooltip;
-
-        private int _rank;
-
-        private int _deleted;
-
-        private System.DateTime _registered;
-
-        private int _registered_associate_id;
-
-        private System.DateTime _updated;
-
-        private int _updated_associate_id;
-
-        private int _updatedCount;
-
-        private string _key;
-
-        [ColumnInfo("consentsource_id")]
-        public int ConsentsourceId
-        {
-            get
-            {
-                return this._consentsource_id;
-            }
-            set
-            {
-                this._consentsource_id = value;
-            }
-        }
-
-        [ColumnInfo("consentsource_id")]
-        public int PK
-        {
-            get
-            {
-                return this._PK;
-            }
-            set
-            {
-                this._PK = value;
-            }
-        }
-
-        [ColumnInfo("name")]
-        public string Name
-        {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                this._name = value;
-            }
-        }
-
-        [ColumnInfo("tooltip")]
-        public string Tooltip
-        {
-            get
-            {
-                return this._tooltip;
-            }
-            set
-            {
-                this._tooltip = value;
-            }
-        }
-
-        [ColumnInfo("rank")]
-        public int Rank
-        {
-            get
-            {
-                return this._rank;
-            }
-            set
-            {
-                this._rank = value;
-            }
-        }
-
-        [ColumnInfo("deleted")]
-        public int Deleted
-        {
-            get
-            {
-                return this._deleted;
-            }
-            set
-            {
-                this._deleted = value;
-            }
-        }
-
-        [ColumnInfo("registered")]
-        public System.DateTime Registered
-        {
-            get
-            {
-                return this._registered;
-            }
-            set
-            {
-                this._registered = value;
-            }
-        }
-
-        [ColumnInfo("registered_associate_id")]
-        public int RegisteredAssociateId
-        {
-            get
-            {
-                return this._registered_associate_id;
-            }
-            set
-            {
-                this._registered_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updated")]
-        public System.DateTime Updated
-        {
-            get
-            {
-                return this._updated;
-            }
-            set
-            {
-                this._updated = value;
-            }
-        }
-
-        [ColumnInfo("updated_associate_id")]
-        public int UpdatedAssociateId
-        {
-            get
-            {
-                return this._updated_associate_id;
-            }
-            set
-            {
-                this._updated_associate_id = value;
-            }
-        }
-
-        [ColumnInfo("updatedCount")]
-        public int UpdatedCount
-        {
-            get
-            {
-                return this._updatedCount;
-            }
-            set
-            {
-                this._updatedCount = value;
-            }
-        }
-
-        [ColumnInfo("key")]
-        public string Key
-        {
-            get
-            {
-                return this._key;
-            }
-            set
-            {
-                this._key = value;
-            }
-        }
-    }
-
     [TableInfo("script_trace")]
     public class ScriptTrace : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
     {
@@ -99106,11 +98211,11 @@ namespace InfoBridge.SuperLinq.Core.Models
         }
     }
 
-    [TableInfo("MailingType")]
-    public class MailingType : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    [TableInfo("ShipmentType")]
+    public class ShipmentType : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
     {
 
-        private int _mailingtype_id;
+        private int _ShipmentType_id;
 
         private int _PK;
 
@@ -99132,20 +98237,20 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _updatedCount;
 
-        [ColumnInfo("mailingtype_id")]
-        public int MailingtypeId
+        [ColumnInfo("ShipmentType_id")]
+        public int ShipmentTypeId
         {
             get
             {
-                return this._mailingtype_id;
+                return this._ShipmentType_id;
             }
             set
             {
-                this._mailingtype_id = value;
+                this._ShipmentType_id = value;
             }
         }
 
-        [ColumnInfo("mailingtype_id")]
+        [ColumnInfo("ShipmentType_id")]
         public int PK
         {
             get
@@ -99276,17 +98381,17 @@ namespace InfoBridge.SuperLinq.Core.Models
         }
     }
 
-    [TableInfo("MailingTypeReservation")]
-    public class MailingTypeReservation : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    [TableInfo("ShipmentTypeReservation")]
+    public class ShipmentTypeReservation : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
     {
 
-        private int _mailingtypereservation_id;
+        private int _ShipmentTypeReservation_id;
 
         private int _PK;
 
         private int _person_id;
 
-        private int _mailingtype_id;
+        private int _ShipmentType_id;
 
         private System.DateTime _registered;
 
@@ -99298,20 +98403,20 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _updatedCount;
 
-        [ColumnInfo("mailingtypereservation_id")]
-        public int MailingtypereservationId
+        [ColumnInfo("ShipmentTypeReservation_id")]
+        public int ShipmentTypeReservationId
         {
             get
             {
-                return this._mailingtypereservation_id;
+                return this._ShipmentTypeReservation_id;
             }
             set
             {
-                this._mailingtypereservation_id = value;
+                this._ShipmentTypeReservation_id = value;
             }
         }
 
-        [ColumnInfo("mailingtypereservation_id")]
+        [ColumnInfo("ShipmentTypeReservation_id")]
         public int PK
         {
             get
@@ -99337,16 +98442,16 @@ namespace InfoBridge.SuperLinq.Core.Models
             }
         }
 
-        [ColumnInfo("mailingtype_id")]
-        public int MailingtypeId
+        [ColumnInfo("ShipmentType_id")]
+        public int ShipmentTypeId
         {
             get
             {
-                return this._mailingtype_id;
+                return this._ShipmentType_id;
             }
             set
             {
-                this._mailingtype_id = value;
+                this._ShipmentType_id = value;
             }
         }
 
@@ -99532,6 +98637,1726 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._expires = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("ConsentPurpose")]
+    public class ConsentPurpose : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _consentpurpose_id;
+
+        private int _PK;
+
+        private string _name;
+
+        private int _rank;
+
+        private string _tooltip;
+
+        private int _deleted;
+
+        private string _key;
+
+        private string _consentText;
+
+        private string _formText;
+
+        private string _privacyStatementDesc;
+
+        private string _privacyStatementUrl;
+
+        private int _active;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("consentpurpose_id")]
+        public int ConsentpurposeId
+        {
+            get
+            {
+                return this._consentpurpose_id;
+            }
+            set
+            {
+                this._consentpurpose_id = value;
+            }
+        }
+
+        [ColumnInfo("consentpurpose_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("name")]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [ColumnInfo("rank")]
+        public int Rank
+        {
+            get
+            {
+                return this._rank;
+            }
+            set
+            {
+                this._rank = value;
+            }
+        }
+
+        [ColumnInfo("tooltip")]
+        public string Tooltip
+        {
+            get
+            {
+                return this._tooltip;
+            }
+            set
+            {
+                this._tooltip = value;
+            }
+        }
+
+        [ColumnInfo("deleted")]
+        public int Deleted
+        {
+            get
+            {
+                return this._deleted;
+            }
+            set
+            {
+                this._deleted = value;
+            }
+        }
+
+        [ColumnInfo("key")]
+        public string Key
+        {
+            get
+            {
+                return this._key;
+            }
+            set
+            {
+                this._key = value;
+            }
+        }
+
+        [ColumnInfo("consentText")]
+        public string ConsentText
+        {
+            get
+            {
+                return this._consentText;
+            }
+            set
+            {
+                this._consentText = value;
+            }
+        }
+
+        [ColumnInfo("formText")]
+        public string FormText
+        {
+            get
+            {
+                return this._formText;
+            }
+            set
+            {
+                this._formText = value;
+            }
+        }
+
+        [ColumnInfo("privacyStatementDesc")]
+        public string PrivacyStatementDesc
+        {
+            get
+            {
+                return this._privacyStatementDesc;
+            }
+            set
+            {
+                this._privacyStatementDesc = value;
+            }
+        }
+
+        [ColumnInfo("privacyStatementUrl")]
+        public string PrivacyStatementUrl
+        {
+            get
+            {
+                return this._privacyStatementUrl;
+            }
+            set
+            {
+                this._privacyStatementUrl = value;
+            }
+        }
+
+        [ColumnInfo("active")]
+        public int Active
+        {
+            get
+            {
+                return this._active;
+            }
+            set
+            {
+                this._active = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("LegalBase")]
+    public class LegalBase : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _legalbase_id;
+
+        private int _PK;
+
+        private string _name;
+
+        private int _rank;
+
+        private string _tooltip;
+
+        private int _deleted;
+
+        private string _key;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("legalbase_id")]
+        public int LegalbaseId
+        {
+            get
+            {
+                return this._legalbase_id;
+            }
+            set
+            {
+                this._legalbase_id = value;
+            }
+        }
+
+        [ColumnInfo("legalbase_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("name")]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [ColumnInfo("rank")]
+        public int Rank
+        {
+            get
+            {
+                return this._rank;
+            }
+            set
+            {
+                this._rank = value;
+            }
+        }
+
+        [ColumnInfo("tooltip")]
+        public string Tooltip
+        {
+            get
+            {
+                return this._tooltip;
+            }
+            set
+            {
+                this._tooltip = value;
+            }
+        }
+
+        [ColumnInfo("deleted")]
+        public int Deleted
+        {
+            get
+            {
+                return this._deleted;
+            }
+            set
+            {
+                this._deleted = value;
+            }
+        }
+
+        [ColumnInfo("key")]
+        public string Key
+        {
+            get
+            {
+                return this._key;
+            }
+            set
+            {
+                this._key = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("ConsentSource")]
+    public class ConsentSource : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _consentsource_id;
+
+        private int _PK;
+
+        private string _name;
+
+        private int _rank;
+
+        private string _tooltip;
+
+        private int _deleted;
+
+        private string _key;
+
+        private int _mailTemplate_id;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("consentsource_id")]
+        public int ConsentsourceId
+        {
+            get
+            {
+                return this._consentsource_id;
+            }
+            set
+            {
+                this._consentsource_id = value;
+            }
+        }
+
+        [ColumnInfo("consentsource_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("name")]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [ColumnInfo("rank")]
+        public int Rank
+        {
+            get
+            {
+                return this._rank;
+            }
+            set
+            {
+                this._rank = value;
+            }
+        }
+
+        [ColumnInfo("tooltip")]
+        public string Tooltip
+        {
+            get
+            {
+                return this._tooltip;
+            }
+            set
+            {
+                this._tooltip = value;
+            }
+        }
+
+        [ColumnInfo("deleted")]
+        public int Deleted
+        {
+            get
+            {
+                return this._deleted;
+            }
+            set
+            {
+                this._deleted = value;
+            }
+        }
+
+        [ColumnInfo("key")]
+        public string Key
+        {
+            get
+            {
+                return this._key;
+            }
+            set
+            {
+                this._key = value;
+            }
+        }
+
+        [ColumnInfo("mailTemplate_id")]
+        public int MailTemplateId
+        {
+            get
+            {
+                return this._mailTemplate_id;
+            }
+            set
+            {
+                this._mailTemplate_id = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("ConsentPerson")]
+    public class ConsentPerson : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _consentperson_id;
+
+        private int _PK;
+
+        private int _person_id;
+
+        private int _consentPurpose_id;
+
+        private int _legalBase_id;
+
+        private int _consentSource_id;
+
+        private string _comment;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("consentperson_id")]
+        public int ConsentpersonId
+        {
+            get
+            {
+                return this._consentperson_id;
+            }
+            set
+            {
+                this._consentperson_id = value;
+            }
+        }
+
+        [ColumnInfo("consentperson_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("person_id")]
+        public int PersonId
+        {
+            get
+            {
+                return this._person_id;
+            }
+            set
+            {
+                this._person_id = value;
+            }
+        }
+
+        [ColumnInfo("consentPurpose_id")]
+        public int ConsentPurposeId
+        {
+            get
+            {
+                return this._consentPurpose_id;
+            }
+            set
+            {
+                this._consentPurpose_id = value;
+            }
+        }
+
+        [ColumnInfo("legalBase_id")]
+        public int LegalBaseId
+        {
+            get
+            {
+                return this._legalBase_id;
+            }
+            set
+            {
+                this._legalBase_id = value;
+            }
+        }
+
+        [ColumnInfo("consentSource_id")]
+        public int ConsentSourceId
+        {
+            get
+            {
+                return this._consentSource_id;
+            }
+            set
+            {
+                this._consentSource_id = value;
+            }
+        }
+
+        [ColumnInfo("comment")]
+        public string Comment
+        {
+            get
+            {
+                return this._comment;
+            }
+            set
+            {
+                this._comment = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("CategoryFamily")]
+    public class CategoryFamily : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _categoryfamily_id;
+
+        private int _PK;
+
+        private string _name;
+
+        private int _rank;
+
+        private string _tooltip;
+
+        private int _deleted;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("categoryfamily_id")]
+        public int CategoryfamilyId
+        {
+            get
+            {
+                return this._categoryfamily_id;
+            }
+            set
+            {
+                this._categoryfamily_id = value;
+            }
+        }
+
+        [ColumnInfo("categoryfamily_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("name")]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [ColumnInfo("rank")]
+        public int Rank
+        {
+            get
+            {
+                return this._rank;
+            }
+            set
+            {
+                this._rank = value;
+            }
+        }
+
+        [ColumnInfo("tooltip")]
+        public string Tooltip
+        {
+            get
+            {
+                return this._tooltip;
+            }
+            set
+            {
+                this._tooltip = value;
+            }
+        }
+
+        [ColumnInfo("deleted")]
+        public int Deleted
+        {
+            get
+            {
+                return this._deleted;
+            }
+            set
+            {
+                this._deleted = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("form")]
+    public class Form : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _form_id;
+
+        private int _PK;
+
+        private string _name;
+
+        private string _description;
+
+        private string _config;
+
+        private int _folder_id;
+
+        private int _script_id;
+
+        private int _response_shipment_id;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        private int _active;
+
+        private System.DateTime _expires;
+
+        private int _maxSubmits;
+
+        private int _type;
+
+        private string _recipe;
+
+        [ColumnInfo("form_id")]
+        public int FormId
+        {
+            get
+            {
+                return this._form_id;
+            }
+            set
+            {
+                this._form_id = value;
+            }
+        }
+
+        [ColumnInfo("form_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("name")]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [ColumnInfo("description")]
+        public string Description
+        {
+            get
+            {
+                return this._description;
+            }
+            set
+            {
+                this._description = value;
+            }
+        }
+
+        [ColumnInfo("config")]
+        public string Config
+        {
+            get
+            {
+                return this._config;
+            }
+            set
+            {
+                this._config = value;
+            }
+        }
+
+        [ColumnInfo("folder_id")]
+        public int FolderId
+        {
+            get
+            {
+                return this._folder_id;
+            }
+            set
+            {
+                this._folder_id = value;
+            }
+        }
+
+        [ColumnInfo("script_id")]
+        public int ScriptId
+        {
+            get
+            {
+                return this._script_id;
+            }
+            set
+            {
+                this._script_id = value;
+            }
+        }
+
+        [ColumnInfo("response_shipment_id")]
+        public int ResponseShipmentId
+        {
+            get
+            {
+                return this._response_shipment_id;
+            }
+            set
+            {
+                this._response_shipment_id = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+
+        [ColumnInfo("active")]
+        public int Active
+        {
+            get
+            {
+                return this._active;
+            }
+            set
+            {
+                this._active = value;
+            }
+        }
+
+        [ColumnInfo("expires")]
+        public System.DateTime Expires
+        {
+            get
+            {
+                return this._expires;
+            }
+            set
+            {
+                this._expires = value;
+            }
+        }
+
+        [ColumnInfo("maxSubmits")]
+        public int MaxSubmits
+        {
+            get
+            {
+                return this._maxSubmits;
+            }
+            set
+            {
+                this._maxSubmits = value;
+            }
+        }
+
+        [ColumnInfo("type")]
+        public int Type
+        {
+            get
+            {
+                return this._type;
+            }
+            set
+            {
+                this._type = value;
+            }
+        }
+
+        [ColumnInfo("recipe")]
+        public string Recipe
+        {
+            get
+            {
+                return this._recipe;
+            }
+            set
+            {
+                this._recipe = value;
+            }
+        }
+    }
+
+    [TableInfo("form_submission")]
+    public class FormSubmission : InfoBridge.SuperLinq.Core.ModelBase.ISoModel
+    {
+
+        private int _form_submission_id;
+
+        private int _PK;
+
+        private int _form_id;
+
+        private System.DateTime _when_submitted;
+
+        private int _contact_id;
+
+        private int _person_id;
+
+        private string _email_address;
+
+        private int _response_shipment_addr_id;
+
+        private string _response;
+
+        [ColumnInfo("form_submission_id")]
+        public int FormSubmissionId
+        {
+            get
+            {
+                return this._form_submission_id;
+            }
+            set
+            {
+                this._form_submission_id = value;
+            }
+        }
+
+        [ColumnInfo("form_submission_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("form_id")]
+        public int FormId
+        {
+            get
+            {
+                return this._form_id;
+            }
+            set
+            {
+                this._form_id = value;
+            }
+        }
+
+        [ColumnInfo("when_submitted")]
+        public System.DateTime WhenSubmitted
+        {
+            get
+            {
+                return this._when_submitted;
+            }
+            set
+            {
+                this._when_submitted = value;
+            }
+        }
+
+        [ColumnInfo("contact_id")]
+        public int ContactId
+        {
+            get
+            {
+                return this._contact_id;
+            }
+            set
+            {
+                this._contact_id = value;
+            }
+        }
+
+        [ColumnInfo("person_id")]
+        public int PersonId
+        {
+            get
+            {
+                return this._person_id;
+            }
+            set
+            {
+                this._person_id = value;
+            }
+        }
+
+        [ColumnInfo("email_address")]
+        public string EmailAddress
+        {
+            get
+            {
+                return this._email_address;
+            }
+            set
+            {
+                this._email_address = value;
+            }
+        }
+
+        [ColumnInfo("response_shipment_addr_id")]
+        public int ResponseShipmentAddrId
+        {
+            get
+            {
+                return this._response_shipment_addr_id;
+            }
+            set
+            {
+                this._response_shipment_addr_id = value;
+            }
+        }
+
+        [ColumnInfo("response")]
+        public string Response
+        {
+            get
+            {
+                return this._response;
+            }
+            set
+            {
+                this._response = value;
+            }
+        }
+    }
+
+    [TableInfo("Webhook")]
+    public class Webhook : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _webhook_id;
+
+        private int _PK;
+
+        private string _name;
+
+        private string _events;
+
+        private string _target_url;
+
+        private string _type;
+
+        private string _application_token;
+
+        private string _headers;
+
+        private string _properties;
+
+        private string _secret;
+
+        private int _state;
+
+        private int _total_calls;
+
+        private int _total_errors;
+
+        private int _consecutive_errors;
+
+        private string _last_error;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("webhook_id")]
+        public int WebhookId
+        {
+            get
+            {
+                return this._webhook_id;
+            }
+            set
+            {
+                this._webhook_id = value;
+            }
+        }
+
+        [ColumnInfo("webhook_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("name")]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [ColumnInfo("events")]
+        public string Events
+        {
+            get
+            {
+                return this._events;
+            }
+            set
+            {
+                this._events = value;
+            }
+        }
+
+        [ColumnInfo("target_url")]
+        public string TargetUrl
+        {
+            get
+            {
+                return this._target_url;
+            }
+            set
+            {
+                this._target_url = value;
+            }
+        }
+
+        [ColumnInfo("type")]
+        public string Type
+        {
+            get
+            {
+                return this._type;
+            }
+            set
+            {
+                this._type = value;
+            }
+        }
+
+        [ColumnInfo("application_token")]
+        public string ApplicationToken
+        {
+            get
+            {
+                return this._application_token;
+            }
+            set
+            {
+                this._application_token = value;
+            }
+        }
+
+        [ColumnInfo("headers")]
+        public string Headers
+        {
+            get
+            {
+                return this._headers;
+            }
+            set
+            {
+                this._headers = value;
+            }
+        }
+
+        [ColumnInfo("properties")]
+        public string Properties
+        {
+            get
+            {
+                return this._properties;
+            }
+            set
+            {
+                this._properties = value;
+            }
+        }
+
+        [ColumnInfo("secret")]
+        public string Secret
+        {
+            get
+            {
+                return this._secret;
+            }
+            set
+            {
+                this._secret = value;
+            }
+        }
+
+        [ColumnInfo("state")]
+        public int State
+        {
+            get
+            {
+                return this._state;
+            }
+            set
+            {
+                this._state = value;
+            }
+        }
+
+        [ColumnInfo("total_calls")]
+        public int TotalCalls
+        {
+            get
+            {
+                return this._total_calls;
+            }
+            set
+            {
+                this._total_calls = value;
+            }
+        }
+
+        [ColumnInfo("total_errors")]
+        public int TotalErrors
+        {
+            get
+            {
+                return this._total_errors;
+            }
+            set
+            {
+                this._total_errors = value;
+            }
+        }
+
+        [ColumnInfo("consecutive_errors")]
+        public int ConsecutiveErrors
+        {
+            get
+            {
+                return this._consecutive_errors;
+            }
+            set
+            {
+                this._consecutive_errors = value;
+            }
+        }
+
+        [ColumnInfo("last_error")]
+        public string LastError
+        {
+            get
+            {
+                return this._last_error;
+            }
+            set
+            {
+                this._last_error = value;
             }
         }
 
