@@ -1081,6 +1081,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _activeErpLinks;
 
+        private System.DateTime _DeletedDate;
+
         [ColumnInfo("contact_id")]
         public int ContactId
         {
@@ -1574,6 +1576,19 @@ namespace InfoBridge.SuperLinq.Core.Models
                 this._activeErpLinks = value;
             }
         }
+
+        [ColumnInfo("DeletedDate")]
+        public System.DateTime DeletedDate
+        {
+            get
+            {
+                return this._DeletedDate;
+            }
+            set
+            {
+                this._DeletedDate = value;
+            }
+        }
     }
 
     [TableInfo("person")]
@@ -1687,6 +1702,8 @@ namespace InfoBridge.SuperLinq.Core.Models
         private int _blockEmarketing;
 
         private int _activeErpLinks;
+
+        private System.DateTime _DeletedDate;
 
         [ColumnInfo("person_id")]
         public int PersonId
@@ -2387,6 +2404,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._activeErpLinks = value;
+            }
+        }
+
+        [ColumnInfo("DeletedDate")]
+        public System.DateTime DeletedDate
+        {
+            get
+            {
+                return this._DeletedDate;
+            }
+            set
+            {
+                this._DeletedDate = value;
             }
         }
     }
@@ -49464,6 +49494,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _updatedCount;
 
+        private System.DateTime _generationStart;
+
         [ColumnInfo("StatusDef_id")]
         public int StatusDefId
         {
@@ -49682,6 +49714,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._updatedCount = value;
+            }
+        }
+
+        [ColumnInfo("generationStart")]
+        public System.DateTime GenerationStart
+        {
+            get
+            {
+                return this._generationStart;
+            }
+            set
+            {
+                this._generationStart = value;
             }
         }
     }
@@ -65649,6 +65694,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _ticket_type;
 
+        private string _from_address;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -66322,6 +66369,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._ticket_type = value;
+            }
+        }
+
+        [ColumnInfo("from_address")]
+        public string FromAddress
+        {
+            get
+            {
+                return this._from_address;
+            }
+            set
+            {
+                this._from_address = value;
             }
         }
     }
@@ -100003,6 +100063,10 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _response;
 
+        private int _status;
+
+        private string _processing_log;
+
         [ColumnInfo("form_submission_id")]
         public int FormSubmissionId
         {
@@ -100117,6 +100181,32 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._response = value;
+            }
+        }
+
+        [ColumnInfo("status")]
+        public int Status
+        {
+            get
+            {
+                return this._status;
+            }
+            set
+            {
+                this._status = value;
+            }
+        }
+
+        [ColumnInfo("processing_log")]
+        public string ProcessingLog
+        {
+            get
+            {
+                return this._processing_log;
+            }
+            set
+            {
+                this._processing_log = value;
             }
         }
     }
@@ -100357,6 +100447,236 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._last_error = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("SaintConfiguration")]
+    public class SaintConfiguration : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _saintconfiguration_id;
+
+        private int _PK;
+
+        private int _ownerTable;
+
+        private int _enabled;
+
+        private int _Period1;
+
+        private int _Period2;
+
+        private int _Period3;
+
+        private System.DateTime _generationStart;
+
+        private System.DateTime _generationEnd;
+
+        private int _rowsGenerated;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("saintconfiguration_id")]
+        public int SaintconfigurationId
+        {
+            get
+            {
+                return this._saintconfiguration_id;
+            }
+            set
+            {
+                this._saintconfiguration_id = value;
+            }
+        }
+
+        [ColumnInfo("saintconfiguration_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("ownerTable")]
+        public int OwnerTable
+        {
+            get
+            {
+                return this._ownerTable;
+            }
+            set
+            {
+                this._ownerTable = value;
+            }
+        }
+
+        [ColumnInfo("enabled")]
+        public int Enabled
+        {
+            get
+            {
+                return this._enabled;
+            }
+            set
+            {
+                this._enabled = value;
+            }
+        }
+
+        [ColumnInfo("Period1")]
+        public int Period1
+        {
+            get
+            {
+                return this._Period1;
+            }
+            set
+            {
+                this._Period1 = value;
+            }
+        }
+
+        [ColumnInfo("Period2")]
+        public int Period2
+        {
+            get
+            {
+                return this._Period2;
+            }
+            set
+            {
+                this._Period2 = value;
+            }
+        }
+
+        [ColumnInfo("Period3")]
+        public int Period3
+        {
+            get
+            {
+                return this._Period3;
+            }
+            set
+            {
+                this._Period3 = value;
+            }
+        }
+
+        [ColumnInfo("generationStart")]
+        public System.DateTime GenerationStart
+        {
+            get
+            {
+                return this._generationStart;
+            }
+            set
+            {
+                this._generationStart = value;
+            }
+        }
+
+        [ColumnInfo("generationEnd")]
+        public System.DateTime GenerationEnd
+        {
+            get
+            {
+                return this._generationEnd;
+            }
+            set
+            {
+                this._generationEnd = value;
+            }
+        }
+
+        [ColumnInfo("rowsGenerated")]
+        public int RowsGenerated
+        {
+            get
+            {
+                return this._rowsGenerated;
+            }
+            set
+            {
+                this._rowsGenerated = value;
             }
         }
 
