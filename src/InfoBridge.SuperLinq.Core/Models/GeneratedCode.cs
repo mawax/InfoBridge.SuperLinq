@@ -99806,6 +99806,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _recipe;
 
+        private int _group_id;
+
         [ColumnInfo("form_id")]
         public int FormId
         {
@@ -100037,6 +100039,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._recipe = value;
+            }
+        }
+
+        [ColumnInfo("group_id")]
+        public int GroupId
+        {
+            get
+            {
+                return this._group_id;
+            }
+            set
+            {
+                this._group_id = value;
             }
         }
     }
