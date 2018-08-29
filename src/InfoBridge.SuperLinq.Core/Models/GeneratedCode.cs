@@ -421,6 +421,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _encryptedCheck;
 
+        private string _userName;
+
         [ColumnInfo("associate_id")]
         public int AssociateId
         {
@@ -717,6 +719,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._encryptedCheck = value;
+            }
+        }
+
+        [ColumnInfo("userName")]
+        public string UserName
+        {
+            get
+            {
+                return this._userName;
+            }
+            set
+            {
+                this._userName = value;
             }
         }
     }
@@ -65696,6 +65711,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _from_address;
 
+        private int _form_submission_id;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -66382,6 +66399,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._from_address = value;
+            }
+        }
+
+        [ColumnInfo("form_submission_id")]
+        public int FormSubmissionId
+        {
+            get
+            {
+                return this._form_submission_id;
+            }
+            set
+            {
+                this._form_submission_id = value;
             }
         }
     }
@@ -78743,6 +78773,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _document_message;
 
+        private string _long_description;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -78987,6 +79019,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._document_message = value;
+            }
+        }
+
+        [ColumnInfo("long_description")]
+        public string LongDescription
+        {
+            get
+            {
+                return this._long_description;
+            }
+            set
+            {
+                this._long_description = value;
             }
         }
     }
