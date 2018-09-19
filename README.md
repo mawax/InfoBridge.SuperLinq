@@ -19,7 +19,7 @@ Then, make sure you are authenticated with NetServer and start querying:
 Check out the [wiki](https://github.com/mawax/InfoBridge.SuperLinq/wiki) for documentation and examples.
 
 ## Requirements
-.NET Framework 4.5.1
+.NET Framework 4.7.1
 
 ## License
 SuperLinq is released under the MIT License.
