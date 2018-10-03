@@ -50,6 +50,7 @@ namespace InfoBridge.SuperLinq.Core.Archives
 
             ArchiveQueryParameters context = new ArchiveQueryParameters();
             context.ArchiveName = executionContext.ArchiveName;
+            context.Entities = executionContext.Entities;
             context.RequestedColumns = DynamicPropertyHelper.GetAllDbColumnsPrefixed<T>();
             int page = 0;
 
