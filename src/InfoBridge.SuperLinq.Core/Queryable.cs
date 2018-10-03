@@ -33,6 +33,15 @@ namespace InfoBridge.SuperLinq.Core
             : this(context: (context) => context.ArchiveName = archiveProviderName) { }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Queryable{T}"/> class specifying a specific archive provider to use and entities to include.
+        /// If left out, all entities are included
+        /// </summary>
+        /// <param name="archiveProviderName">Name of the archive provider to use, e.g. 'Dynamic', or 'ContactSelection'.</param>
+        /// <param name="entities">Which entities to include, if not provided, all entities are included</param>
+        public Queryable(string archiveProviderName, params string[] entities)
+            : this(context: (context) => { context.ArchiveName = archiveProviderName; context.Entities = entities; }) { }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="Queryable{T}"/> class and configure it using an execution context.
         /// </summary>
         /// <param name="context">Action to configure the <see cref="ArchiveExecutionContext"/>.</param>

@@ -21,6 +21,9 @@ namespace InfoBridge.SuperLinq.Core
         public SimpleQueryable(string archiveProviderName)
             : this(context: (context) => context.ArchiveName = archiveProviderName) { }
 
+        public SimpleQueryable(string archiveProviderName, params string[] entities)
+            : this(context: (context) => { context.ArchiveName = archiveProviderName; context.Entities = entities; }) { }
+
         public SimpleQueryable(Action<ArchiveExecutionContext> context)
             : this(DependencyHelper.CreateArchiveManager<T>(context)) { }
 
