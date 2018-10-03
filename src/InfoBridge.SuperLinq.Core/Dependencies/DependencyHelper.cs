@@ -19,8 +19,8 @@ namespace InfoBridge.SuperLinq.Core.Dependencies
         {
             return new ArchiveManager<T>(
                 new ArchiveExecutor(() => new ArchiveAgentWrapper()),
-                new DateTimeConverter(),
-                new ArchiveExecutionContextProvider(context)
+                new ArchiveExecutionContextProvider(context),
+                new ResultParser(new DateTimeConverter())
             );
         }
 

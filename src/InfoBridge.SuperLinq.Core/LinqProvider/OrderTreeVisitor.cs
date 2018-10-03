@@ -16,7 +16,7 @@ namespace InfoBridge.SuperLinq.Core.LinqProvider
 
         protected override Expression VisitMember(MemberExpression expression)
         {
-            _column = DynamicPropertyHelper.GetColumnName(expression.Member.DeclaringType, expression.Member.Name);
+            _column = DynamicPropertyHelper.GetColumnName(expression.Expression.Type, expression.Member.Name);
             return expression;
         }
     }

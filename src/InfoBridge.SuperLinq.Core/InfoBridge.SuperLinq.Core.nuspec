@@ -10,6 +10,31 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Primarily SuperLinq is a LINQ provider for the NetServer Web Services, more specially for the ArchiveAgent. By default it utilizes the dynamic archive provider to query any table in the SuperOffice database but it can actually be used to query any archive provider.</description>
     <releaseNotes>
+1.0.9
+Updated SuperOffice NuGet Packages to 8.4 R01 (8.4.6837.1220)
+	
+1.0.8
+Added SuperOffice 8.3 R04 changes and updated SuperOffice NuGet Packages to 8.3 R04 (8.3.6810.15)
+Updated solution projects to .NET Framework 4.7.1
+	
+1.0.7
+Added SuperOffice 8.3 R02 changes and updated SuperOffice NuGet Packages to 8.3 R02 (8.3.6746.16)
+	
+1.0.6
+Added SuperOffice 8.3 R01 tables and updated SuperOffice NuGet Packages to 8.3 R01 (8.3.6718.18)
+
+1.0.5
+Added SuperOffice 8.2 R04 tables and updated SuperOffice NuGet Packages to 8.2 R04 (8.2.6642.1034)
+
+1.0.4
+Added SuperOffice 8.1 tables and updated SuperOffice NuGet Packages to 8.1
+Split up parser from ArchiveManager so it can be used to parse any Archive Provider result set
+Fixed multithreated initialization issue
+Fixed issue with OrderBy on overridden properties that could take incorrect tablename of base class
+
+1.0.3
+Support for nullable checks and removed references to 7.5 proxies
+    
 1.0.2 
 Small bug fixes, documentation and a better base interface for models
 

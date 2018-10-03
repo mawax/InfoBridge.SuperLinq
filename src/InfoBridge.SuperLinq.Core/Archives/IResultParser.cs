@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace InfoBridge.SuperLinq.Core.Archives
 {
-    public interface IArchiveExecutor
+    public interface IResultParser
     {
-        IList<ArchiveListItem> GetItems(ArchiveQueryParameters parameters, int maxItems, int page);
+        IList<T> Parse<T>(IList<ArchiveListItem> list);
+        IList<T> Parse<T>(ArchiveExecutionContext executionContext, IList<ArchiveListItem> list);
     }
 }

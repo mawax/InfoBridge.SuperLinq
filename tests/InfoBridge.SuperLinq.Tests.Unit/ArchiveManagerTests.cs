@@ -3,7 +3,8 @@ using InfoBridge.SuperLinq.Core.Projection;
 using InfoBridge.SuperLinq.Core.QueryBuilders;
 using InfoBridge.SuperLinq.Tests.Unit.Helpers;
 using Moq;
-using SuperOffice.Services75;
+using SuperOffice.CRM.ArchiveLists;
+using SuperOffice.CRM.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,16 +19,13 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         [Fact]
         public void TestDoQuery()
         {
-            var executor = new Mock<IArchiveExecutor>();
-            executor.
-                Setup(x => x.GetItems(It.IsAny<ArchiveQueryParameters>(), It.IsAny<int>(), It.IsAny<int>())).
-                Returns(new List<ArchiveListItem> { new ArchiveListItem {
+            var data = new List<ArchiveListItem> { new ArchiveListItem {
                      ColumnData = new ColumnDataDictionary {
                          { "id", new ArchiveColumnData { DisplayValue = "[I:5]" } },
                          { "name", new ArchiveColumnData { DisplayValue = "infobridge" } },
                          { "activated", new ArchiveColumnData { DisplayValue = "[DT:01/31/2016 10:13:37.0000000]" } }
                      }
-                } });
+                } };
 
             var dateTimeConverter = new Mock<IDateTimeConverter>();
             dateTimeConverter.Setup(x => x.ConvertFromTimeZone(It.IsAny<DateTime>())).Returns(
@@ -35,12 +33,9 @@ namespace InfoBridge.SuperLinq.Tests.Unit
                 {
                     return ret.AddHours(6);
                 });
+            var resultParser = new ResultParser(dateTimeConverter.Object);
 
-            var man = new ArchiveManager<PropertyHelperTestCompany>(executor.Object,
-                dateTimeConverter.Object,
-                new ArchiveExecutionContextProvider(action => action.DateTimeToUTC = true));
-
-            var result = man.DoQuery(new LinqRestrictionBuilder<PropertyHelperTestCompany>()).FirstOrDefault();
+            var result = resultParser.Parse<PropertyHelperTestCompany>(new ArchiveExecutionContext { DateTimeToUTC = true }, data).FirstOrDefault();
             Assert.Equal(5, result.Id);
             Assert.Equal("infobridge", result.Name);
             Assert.Equal(new DateTime(2016, 1, 31, 16, 13, 37).ToString(), result.Activated.ToLocalTime().ToString()); //this is utc, so we need to convert it to local time first
@@ -51,8 +46,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         public void TestDoQuerySkip()
         {
             var executor = new MockArchiveExecutor();
-            var dateTimeConverter = new Mock<IDateTimeConverter>();
-            var man = new ArchiveManager<PropertyHelperTestCompany>(executor, dateTimeConverter.Object, new ArchiveExecutionContextProvider());
+            var man = new ArchiveManager<PropertyHelperTestCompany>(executor, new ArchiveExecutionContextProvider(), new Mock<IResultParser>().Object);
 
             var result = man.DoQuery(new LinqRestrictionBuilder<PropertyHelperTestCompany>(), noItems: 0, skip: 13);
 
@@ -66,7 +60,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         public void TestDoQueryMax()
         {
             var executor = new MockArchiveExecutor();
-            var man = new ArchiveManager<PropertyHelperTestCompany>(executor, new Mock<IDateTimeConverter>().Object, new ArchiveExecutionContextProvider());
+            var man = new ArchiveManager<PropertyHelperTestCompany>(executor, new ArchiveExecutionContextProvider(), new Mock<IResultParser>().Object);
 
             var result = man.DoQuery(new LinqRestrictionBuilder<PropertyHelperTestCompany>(), noItems: 15);
 
@@ -79,7 +73,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         public void TestDoQueryTakeMax()
         {
             var executor = new MockArchiveExecutor();
-            var man = new ArchiveManager<PropertyHelperTestCompany>(executor, new Mock<IDateTimeConverter>().Object, new ArchiveExecutionContextProvider());
+            var man = new ArchiveManager<PropertyHelperTestCompany>(executor, new ArchiveExecutionContextProvider(), new Mock<IResultParser>().Object);
 
             var result = man.DoQuery(new LinqRestrictionBuilder<PropertyHelperTestCompany>(), noItems: 15, skip: 30);
 

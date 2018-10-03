@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SuperOffice.Services75;
 using InfoBridge.SuperLinq.Core.Archives.AgentWrapper;
+using SuperOffice.CRM.Services;
+using SuperOffice.CRM.ArchiveLists;
 
 namespace InfoBridge.SuperLinq.Tests.Unit.Helpers
 {

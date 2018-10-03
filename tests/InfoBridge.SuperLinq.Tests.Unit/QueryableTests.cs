@@ -1,7 +1,7 @@
 ﻿using InfoBridge.SuperLinq.Core;
 using InfoBridge.SuperLinq.Core.LinqProvider;
 using InfoBridge.SuperLinq.Tests.Unit.Helpers;
-using SuperOffice.Services75;
+using SuperOffice.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -169,7 +169,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         {
             var manager = SetupManager<TestPerson>();
             var q = new Queryable<TestPerson>(CreateExecutor(manager));
-            var results = q.OrderBy(x => x.LastName).ToList();
+            q.OrderBy(x => x.LastName).ToList();
             var orderBy = manager.OrderByBuilder.Get();
 
             Assert.NotNull(orderBy);
@@ -183,7 +183,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit
         {
             var manager = SetupManager<TestPerson>();
             var q = new Queryable<TestPerson>(CreateExecutor(manager));
-            var results = q.OrderBy(x => x.LastName).OrderByDescending(x => x.Id).ToList();
+            q.OrderBy(x => x.LastName).OrderByDescending(x => x.Id).ToList();
             var orderBy = manager.OrderByBuilder.Get();
 
             Assert.NotNull(orderBy);
@@ -192,6 +192,66 @@ namespace InfoBridge.SuperLinq.Tests.Unit
             Assert.Equal(OrderBySortType.ASC, orderBy[0].Direction);
             Assert.Equal("testperson.id", orderBy[1].Name);
             Assert.Equal(OrderBySortType.DESC, orderBy[1].Direction);
+        }
+
+        [Fact]
+        public void TestOrderByOnInherited()
+        {
+            var manager = SetupManager<InheritingTestPerson>();
+            var q = new Queryable<InheritingTestPerson>(CreateExecutor(manager));
+            q.OrderBy(x => x.Id).ToList();
+            var orderBy = manager.OrderByBuilder.Get();
+
+            Assert.Equal("inheritingtestperson.newid", orderBy[0].Name);
+        }
+
+        [Fact]
+        public void TestNull1()
+        {
+            var manager = SetupManager<TestPerson>();
+            var q = new Queryable<TestPerson>(CreateExecutor(manager));
+            var results = q.Where(x => x.Email == null).ToList();
+            var restrictions = manager.RestrictionBuilder.GetRestrictions();
+
+            Assert.Equal(1, restrictions.Count);
+
+            Assert.Equal("testperson.email", restrictions[0].Name);
+            Assert.Equal("isnull", restrictions[0].Operator);
+            Assert.Null(restrictions[0].Values);
+        }
+
+        [Fact]
+        public void TestNull2()
+        {
+            var manager = SetupManager<TestPerson>();
+            var q = new Queryable<TestPerson>(CreateExecutor(manager));
+            var results = q.Where(x => null == x.Email).ToList();
+            var restrictions = manager.RestrictionBuilder.GetRestrictions();
+
+            Assert.Equal(1, restrictions.Count);
+
+            Assert.Equal("testperson.email", restrictions[0].Name);
+            Assert.Equal("isnull", restrictions[0].Operator);
+            Assert.Null(restrictions[0].Values);
+        }
+
+        [Fact]
+        public void TestNull3()
+        {
+            var manager = SetupManager<TestPerson>();
+            var q = new Queryable<TestPerson>(CreateExecutor(manager));
+            var results = q.Where(x => null == x.Email && x.NullableInt == null).ToList();
+            var restrictions = manager.RestrictionBuilder.GetRestrictions();
+
+            Assert.Equal(2, restrictions.Count);
+
+
+            Assert.Equal("testperson.email", restrictions[0].Name);
+            Assert.Equal("isnull", restrictions[0].Operator);
+            Assert.Null(restrictions[0].Values);
+            Assert.Equal("testperson.nullableInt", restrictions[1].Name);
+            Assert.Equal("isnull", restrictions[1].Operator);
+            Assert.Null(restrictions[1].Values);
         }
 
         private MockArchiveManager<T> SetupManager<T>()

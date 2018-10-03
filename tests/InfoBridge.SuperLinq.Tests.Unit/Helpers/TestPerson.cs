@@ -12,7 +12,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit.Helpers
     public class TestPerson : ISoModel
     {
         [ColumnInfo("id")]
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         [ColumnInfo("id")]
         public int PK { get; set; }
@@ -28,6 +28,9 @@ namespace InfoBridge.SuperLinq.Tests.Unit.Helpers
 
         [ColumnInfo("opt_in")]
         public int OptIn { get; set; }
+
+        [ColumnInfo("nullableInt")]
+        public int? NullableInt { get; set; }
     }
 }
 

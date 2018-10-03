@@ -115,6 +115,7 @@ namespace InfoBridge.SuperLinq.Core.Projection
         private static void EnsureMap(Type type)
         {
             string entityIdentifier = GetEntityIdentifier(type);
+            //check if this type is initialized
             if (!EntityTableMap.ContainsKey(entityIdentifier))
             {
                 lock (_lock)
@@ -132,29 +133,22 @@ namespace InfoBridge.SuperLinq.Core.Projection
                         }
                         else
                         {
+                            var propertyMap = new Dictionary<string, string[]>();
+                            var columnMap = new Dictionary<string, ColumnInfo>();
+
+                            //loop all properties of the type we want to map
+                            foreach (PropertyInfo p in type.GetProperties())
+                            {
+                                AddProperty(propertyMap, columnMap, p);
+                            }
+
+                            //add the new maps
+                            EntityColumnMap.Add(entityIdentifier, columnMap);
+                            EntityPropertyMap.Add(entityIdentifier, propertyMap);
+
+                            //Last thing to do is adding the item to the entityTableMap. 
+                            //Needs to be the last thing, as we use the item in this dictionary to check if this type is initialized. 
                             EntityTableMap.Add(entityIdentifier, tableInfo.Name);
-                        }
-                    }
-                }
-            }
-
-            if (!EntityPropertyMap.ContainsKey(entityIdentifier))
-            {
-                lock (_lock)
-                {
-                    if (!EntityPropertyMap.ContainsKey(entityIdentifier))
-                    {
-                        //add a new empty map
-                        EntityPropertyMap.Add(GetEntityIdentifier(type), new Dictionary<string, string[]>());
-                        EntityColumnMap.Add(GetEntityIdentifier(type), new Dictionary<string, ColumnInfo>());
-
-                        Dictionary<string, string[]> propertyMap = GetPropertyMapForEntity(type);
-                        Dictionary<string, ColumnInfo> columnMap = GetColumnMapForEntity(type);
-
-                        //loop all properties of the type we want to map
-                        foreach (PropertyInfo p in type.GetProperties())
-                        {
-                            AddProperty(propertyMap, columnMap, p);
                         }
                     }
                 }
