@@ -11,6 +11,7 @@ namespace InfoBridge.SuperLinq.Core.Archives
     public class ArchiveExecutionContext
     {
         public string ArchiveName { get; set; } = "Dynamic";
+        public string[] Entities { get; set; }
         public bool DateTimeToUTC { get; set; }
     }
 }

@@ -84002,7 +84002,7 @@ namespace InfoBridge.SuperLinq.Core.Models
     }
 
     [TableInfo("screen_chooser")]
-    public class ScreenChooser : InfoBridge.SuperLinq.Core.ModelBase.ISoModel
+    public class ScreenChooser : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
     {
 
         private int _id;
@@ -84018,6 +84018,18 @@ namespace InfoBridge.SuperLinq.Core.Models
         private string _description;
 
         private int _enabled;
+
+        private string _unique_identifier;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
 
         [ColumnInfo("id")]
         public int Id
@@ -84109,6 +84121,84 @@ namespace InfoBridge.SuperLinq.Core.Models
                 this._enabled = value;
             }
         }
+
+        [ColumnInfo("unique_identifier")]
+        public string UniqueIdentifier
+        {
+            get
+            {
+                return this._unique_identifier;
+            }
+            set
+            {
+                this._unique_identifier = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
     }
 
     [TableInfo("scheduled_task")]
@@ -84192,7 +84282,7 @@ namespace InfoBridge.SuperLinq.Core.Models
     }
 
     [TableInfo("ejscript")]
-    public class Ejscript : InfoBridge.SuperLinq.Core.ModelBase.ISoModel
+    public class Ejscript : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
     {
 
         private int _id;
@@ -84214,6 +84304,18 @@ namespace InfoBridge.SuperLinq.Core.Models
         private string _long_description;
 
         private int _extra_menus_id;
+
+        private string _unique_identifier;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
 
         [ColumnInfo("id")]
         public int Id
@@ -84342,6 +84444,84 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._extra_menus_id = value;
+            }
+        }
+
+        [ColumnInfo("unique_identifier")]
+        public string UniqueIdentifier
+        {
+            get
+            {
+                return this._unique_identifier;
+            }
+            set
+            {
+                this._unique_identifier = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
             }
         }
     }
