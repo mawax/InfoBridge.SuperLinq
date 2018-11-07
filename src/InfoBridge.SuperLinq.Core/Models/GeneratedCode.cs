@@ -64971,6 +64971,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _inbox;
 
+        private int _important;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -65267,6 +65269,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._inbox = value;
+            }
+        }
+
+        [ColumnInfo("important")]
+        public int Important
+        {
+            get
+            {
+                return this._important;
+            }
+            set
+            {
+                this._important = value;
             }
         }
     }
