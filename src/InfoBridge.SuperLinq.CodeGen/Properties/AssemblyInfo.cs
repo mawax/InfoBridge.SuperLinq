@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("InfoBridge Software B.V.")]
 [assembly: AssemblyProduct("InfoBridge.SuperLinq.CodeGen")]
-[assembly: AssemblyCopyright("Copyright © InfoBridge Software B.V.  2018")]
+[assembly: AssemblyCopyright("Copyright © InfoBridge Software B.V. 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

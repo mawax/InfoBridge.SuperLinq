@@ -191,12 +191,15 @@
   <ItemGroup>
     <Compile Include="ArchiveExecutorTests.cs" />
     <Compile Include="ArchiveManagerTests.cs" />
+    <Compile Include="ColumnInfoTests.cs" />
     <Compile Include="DynamicPropertyHelperTests.cs" />
     <Compile Include="Helpers\InheritingTestPerson.cs" />
     <Compile Include="Helpers\MockArchiveAgent.cs" />
     <Compile Include="Helpers\MockArchiveExecutor.cs" />
     <Compile Include="Helpers\MockArchiveManager.cs" />
+    <Compile Include="Helpers\MockColumnConfigProvider.cs" />
     <Compile Include="Helpers\PropertyHelperTestCompany.cs" />
+    <Compile Include="Helpers\TestAddress.cs" />
     <Compile Include="Helpers\TestPerson.cs" />
     <Compile Include="LinqRestrictionBuilderTests.cs" />
     <Compile Include="OrderByBuilderTests.cs" />

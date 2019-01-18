@@ -194,6 +194,7 @@
     <Compile Include="Archives\IResultParser.cs" />
     <Compile Include="Archives\ResultParser.cs" />
     <Compile Include="Attributes\ColumnInfo.cs" />
+    <Compile Include="Attributes\ColumnConfigProviderBase.cs" />
     <Compile Include="Attributes\TableInfo.cs" />
     <Compile Include="Dependencies\DependencyHelper.cs" />
     <Compile Include="Exceptions\SuperLinqException.cs" />
