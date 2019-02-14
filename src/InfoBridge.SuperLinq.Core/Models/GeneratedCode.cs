@@ -77698,6 +77698,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _transfer_to;
 
+        private int _consented;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -78072,6 +78074,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._transfer_to = value;
+            }
+        }
+
+        [ColumnInfo("consented")]
+        public int Consented
+        {
+            get
+            {
+                return this._consented;
+            }
+            set
+            {
+                this._consented = value;
             }
         }
     }
@@ -100048,6 +100063,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _group_id;
 
+        private string _form_key;
+
         [ColumnInfo("form_id")]
         public int FormId
         {
@@ -100292,6 +100309,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._group_id = value;
+            }
+        }
+
+        [ColumnInfo("form_key")]
+        public string FormKey
+        {
+            get
+            {
+                return this._form_key;
+            }
+            set
+            {
+                this._form_key = value;
             }
         }
     }
