@@ -77016,6 +77016,52 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _widget_language;
 
+        private int _use_opening_hours;
+
+        private int _tzLocationId;
+
+        private int _mon_enabled;
+
+        private System.DateTime _mon_start;
+
+        private System.DateTime _mon_stop;
+
+        private int _tue_enabled;
+
+        private System.DateTime _tue_start;
+
+        private System.DateTime _tue_stop;
+
+        private int _wed_enabled;
+
+        private System.DateTime _wed_start;
+
+        private System.DateTime _wed_stop;
+
+        private int _thu_enabled;
+
+        private System.DateTime _thu_start;
+
+        private System.DateTime _thu_stop;
+
+        private int _fri_enabled;
+
+        private System.DateTime _fri_start;
+
+        private System.DateTime _fri_stop;
+
+        private int _sat_enabled;
+
+        private System.DateTime _sat_start;
+
+        private System.DateTime _sat_stop;
+
+        private int _sun_enabled;
+
+        private System.DateTime _sun_start;
+
+        private System.DateTime _sun_stop;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -77507,6 +77553,305 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._widget_language = value;
+            }
+        }
+
+        [ColumnInfo("use_opening_hours")]
+        public int UseOpeningHours
+        {
+            get
+            {
+                return this._use_opening_hours;
+            }
+            set
+            {
+                this._use_opening_hours = value;
+            }
+        }
+
+        [ColumnInfo("tzLocationId")]
+        public int TzLocationId
+        {
+            get
+            {
+                return this._tzLocationId;
+            }
+            set
+            {
+                this._tzLocationId = value;
+            }
+        }
+
+        [ColumnInfo("mon_enabled")]
+        public int MonEnabled
+        {
+            get
+            {
+                return this._mon_enabled;
+            }
+            set
+            {
+                this._mon_enabled = value;
+            }
+        }
+
+        [ColumnInfo("mon_start")]
+        public System.DateTime MonStart
+        {
+            get
+            {
+                return this._mon_start;
+            }
+            set
+            {
+                this._mon_start = value;
+            }
+        }
+
+        [ColumnInfo("mon_stop")]
+        public System.DateTime MonStop
+        {
+            get
+            {
+                return this._mon_stop;
+            }
+            set
+            {
+                this._mon_stop = value;
+            }
+        }
+
+        [ColumnInfo("tue_enabled")]
+        public int TueEnabled
+        {
+            get
+            {
+                return this._tue_enabled;
+            }
+            set
+            {
+                this._tue_enabled = value;
+            }
+        }
+
+        [ColumnInfo("tue_start")]
+        public System.DateTime TueStart
+        {
+            get
+            {
+                return this._tue_start;
+            }
+            set
+            {
+                this._tue_start = value;
+            }
+        }
+
+        [ColumnInfo("tue_stop")]
+        public System.DateTime TueStop
+        {
+            get
+            {
+                return this._tue_stop;
+            }
+            set
+            {
+                this._tue_stop = value;
+            }
+        }
+
+        [ColumnInfo("wed_enabled")]
+        public int WedEnabled
+        {
+            get
+            {
+                return this._wed_enabled;
+            }
+            set
+            {
+                this._wed_enabled = value;
+            }
+        }
+
+        [ColumnInfo("wed_start")]
+        public System.DateTime WedStart
+        {
+            get
+            {
+                return this._wed_start;
+            }
+            set
+            {
+                this._wed_start = value;
+            }
+        }
+
+        [ColumnInfo("wed_stop")]
+        public System.DateTime WedStop
+        {
+            get
+            {
+                return this._wed_stop;
+            }
+            set
+            {
+                this._wed_stop = value;
+            }
+        }
+
+        [ColumnInfo("thu_enabled")]
+        public int ThuEnabled
+        {
+            get
+            {
+                return this._thu_enabled;
+            }
+            set
+            {
+                this._thu_enabled = value;
+            }
+        }
+
+        [ColumnInfo("thu_start")]
+        public System.DateTime ThuStart
+        {
+            get
+            {
+                return this._thu_start;
+            }
+            set
+            {
+                this._thu_start = value;
+            }
+        }
+
+        [ColumnInfo("thu_stop")]
+        public System.DateTime ThuStop
+        {
+            get
+            {
+                return this._thu_stop;
+            }
+            set
+            {
+                this._thu_stop = value;
+            }
+        }
+
+        [ColumnInfo("fri_enabled")]
+        public int FriEnabled
+        {
+            get
+            {
+                return this._fri_enabled;
+            }
+            set
+            {
+                this._fri_enabled = value;
+            }
+        }
+
+        [ColumnInfo("fri_start")]
+        public System.DateTime FriStart
+        {
+            get
+            {
+                return this._fri_start;
+            }
+            set
+            {
+                this._fri_start = value;
+            }
+        }
+
+        [ColumnInfo("fri_stop")]
+        public System.DateTime FriStop
+        {
+            get
+            {
+                return this._fri_stop;
+            }
+            set
+            {
+                this._fri_stop = value;
+            }
+        }
+
+        [ColumnInfo("sat_enabled")]
+        public int SatEnabled
+        {
+            get
+            {
+                return this._sat_enabled;
+            }
+            set
+            {
+                this._sat_enabled = value;
+            }
+        }
+
+        [ColumnInfo("sat_start")]
+        public System.DateTime SatStart
+        {
+            get
+            {
+                return this._sat_start;
+            }
+            set
+            {
+                this._sat_start = value;
+            }
+        }
+
+        [ColumnInfo("sat_stop")]
+        public System.DateTime SatStop
+        {
+            get
+            {
+                return this._sat_stop;
+            }
+            set
+            {
+                this._sat_stop = value;
+            }
+        }
+
+        [ColumnInfo("sun_enabled")]
+        public int SunEnabled
+        {
+            get
+            {
+                return this._sun_enabled;
+            }
+            set
+            {
+                this._sun_enabled = value;
+            }
+        }
+
+        [ColumnInfo("sun_start")]
+        public System.DateTime SunStart
+        {
+            get
+            {
+                return this._sun_start;
+            }
+            set
+            {
+                this._sun_start = value;
+            }
+        }
+
+        [ColumnInfo("sun_stop")]
+        public System.DateTime SunStop
+        {
+            get
+            {
+                return this._sun_stop;
+            }
+            set
+            {
+                this._sun_stop = value;
             }
         }
     }
@@ -97677,6 +98022,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _cc;
 
+        private string _cal_data;
+
         [ColumnInfo("email_item_id")]
         public int EmailItemId
         {
@@ -98077,6 +98424,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._cc = value;
+            }
+        }
+
+        [ColumnInfo("cal_data")]
+        public string CalData
+        {
+            get
+            {
+                return this._cal_data;
+            }
+            set
+            {
+                this._cal_data = value;
             }
         }
     }
