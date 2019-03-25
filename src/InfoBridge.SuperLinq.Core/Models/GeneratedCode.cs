@@ -77062,6 +77062,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private System.DateTime _sun_stop;
 
+        private string _custom_queue_text;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -77852,6 +77854,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._sun_stop = value;
+            }
+        }
+
+        [ColumnInfo("custom_queue_text")]
+        public string CustomQueueText
+        {
+            get
+            {
+                return this._custom_queue_text;
+            }
+            set
+            {
+                this._custom_queue_text = value;
             }
         }
     }
@@ -78674,6 +78689,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _active_pane;
 
+        private int _sorting;
+
         private int _shipmenttype_id;
 
         [ColumnInfo("id")]
@@ -79089,6 +79106,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._active_pane = value;
+            }
+        }
+
+        [ColumnInfo("sorting")]
+        public int Sorting
+        {
+            get
+            {
+                return this._sorting;
+            }
+            set
+            {
+                this._sorting = value;
             }
         }
 
