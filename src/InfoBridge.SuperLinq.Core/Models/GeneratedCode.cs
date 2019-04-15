@@ -423,6 +423,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _userName;
 
+        private int _waiting_for_approval;
+
         [ColumnInfo("associate_id")]
         public int AssociateId
         {
@@ -732,6 +734,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._userName = value;
+            }
+        }
+
+        [ColumnInfo("waiting_for_approval")]
+        public int WaitingForApproval
+        {
+            get
+            {
+                return this._waiting_for_approval;
+            }
+            set
+            {
+                this._waiting_for_approval = value;
             }
         }
     }
@@ -15082,6 +15097,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _dbi_agent_id;
 
+        private int _appointment_id;
+
         [ColumnInfo("email_id")]
         public int EmailId
         {
@@ -15352,6 +15369,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._dbi_agent_id = value;
+            }
+        }
+
+        [ColumnInfo("appointment_id")]
+        public int AppointmentId
+        {
+            get
+            {
+                return this._appointment_id;
+            }
+            set
+            {
+                this._appointment_id = value;
             }
         }
     }
@@ -101352,6 +101382,176 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._rowsGenerated = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("invitation")]
+    public class Invitation : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _invitation_id;
+
+        private int _PK;
+
+        private string _event_uid;
+
+        private int _event_sequence;
+
+        private System.DateTime _event_dtstamp;
+
+        private int _appointment_id;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("invitation_id")]
+        public int InvitationId
+        {
+            get
+            {
+                return this._invitation_id;
+            }
+            set
+            {
+                this._invitation_id = value;
+            }
+        }
+
+        [ColumnInfo("invitation_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("event_uid")]
+        public string EventUid
+        {
+            get
+            {
+                return this._event_uid;
+            }
+            set
+            {
+                this._event_uid = value;
+            }
+        }
+
+        [ColumnInfo("event_sequence")]
+        public int EventSequence
+        {
+            get
+            {
+                return this._event_sequence;
+            }
+            set
+            {
+                this._event_sequence = value;
+            }
+        }
+
+        [ColumnInfo("event_dtstamp")]
+        public System.DateTime EventDtstamp
+        {
+            get
+            {
+                return this._event_dtstamp;
+            }
+            set
+            {
+                this._event_dtstamp = value;
+            }
+        }
+
+        [ColumnInfo("appointment_id")]
+        public int AppointmentId
+        {
+            get
+            {
+                return this._appointment_id;
+            }
+            set
+            {
+                this._appointment_id = value;
             }
         }
 
