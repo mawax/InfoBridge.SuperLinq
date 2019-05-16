@@ -13,6 +13,7 @@ namespace InfoBridge.SuperLinq.Core.Attributes
     public sealed class ColumnInfo : Attribute
     {
         public string Name { get; private set; }
+        public Type PropertyType { get; set; }
         public string PropertyAppliedName { get; private set; }
         public Type ConfigProviderClass { get; private set; }
         public string[] ConfigProviderParameters { get; private set; }

@@ -46518,6 +46518,12 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _requiredLicense;
 
+        private int _rank;
+
+        private string _subGroup;
+
+        private int _minLevel;
+
         [ColumnInfo("PrefDesc_id")]
         public int PrefDescId
         {
@@ -46762,6 +46768,45 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._requiredLicense = value;
+            }
+        }
+
+        [ColumnInfo("rank")]
+        public int Rank
+        {
+            get
+            {
+                return this._rank;
+            }
+            set
+            {
+                this._rank = value;
+            }
+        }
+
+        [ColumnInfo("subGroup")]
+        public string SubGroup
+        {
+            get
+            {
+                return this._subGroup;
+            }
+            set
+            {
+                this._subGroup = value;
+            }
+        }
+
+        [ColumnInfo("minLevel")]
+        public int MinLevel
+        {
+            get
+            {
+                return this._minLevel;
+            }
+            set
+            {
+                this._minLevel = value;
             }
         }
     }
@@ -65756,6 +65801,10 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _from_address;
 
+        private int[] _tags;
+
+        private int _contact_id;
+
         private int _form_submission_id;
 
         [ColumnInfo("id")]
@@ -66444,6 +66493,32 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._from_address = value;
+            }
+        }
+
+        [ColumnInfo("tags")]
+        public int[] Tags
+        {
+            get
+            {
+                return this._tags;
+            }
+            set
+            {
+                this._tags = value;
+            }
+        }
+
+        [ColumnInfo("contact_id")]
+        public int ContactId
+        {
+            get
+            {
+                return this._contact_id;
+            }
+            set
+            {
+                this._contact_id = value;
             }
         }
 
@@ -83841,6 +83916,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _description;
 
+        private int _autosave;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -84007,6 +84084,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._description = value;
+            }
+        }
+
+        [ColumnInfo("autosave")]
+        public int Autosave
+        {
+            get
+            {
+                return this._autosave;
+            }
+            set
+            {
+                this._autosave = value;
             }
         }
     }
@@ -101552,6 +101642,316 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._appointment_id = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("Tags")]
+    public class Tags : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _tags_id;
+
+        private int _PK;
+
+        private string _name;
+
+        private int _rank;
+
+        private string _tooltip;
+
+        private int _deleted;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("tags_id")]
+        public int TagsId
+        {
+            get
+            {
+                return this._tags_id;
+            }
+            set
+            {
+                this._tags_id = value;
+            }
+        }
+
+        [ColumnInfo("tags_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("name")]
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        [ColumnInfo("rank")]
+        public int Rank
+        {
+            get
+            {
+                return this._rank;
+            }
+            set
+            {
+                this._rank = value;
+            }
+        }
+
+        [ColumnInfo("tooltip")]
+        public string Tooltip
+        {
+            get
+            {
+                return this._tooltip;
+            }
+            set
+            {
+                this._tooltip = value;
+            }
+        }
+
+        [ColumnInfo("deleted")]
+        public int Deleted
+        {
+            get
+            {
+                return this._deleted;
+            }
+            set
+            {
+                this._deleted = value;
+            }
+        }
+
+        [ColumnInfo("registered")]
+        public System.DateTime Registered
+        {
+            get
+            {
+                return this._registered;
+            }
+            set
+            {
+                this._registered = value;
+            }
+        }
+
+        [ColumnInfo("registered_associate_id")]
+        public int RegisteredAssociateId
+        {
+            get
+            {
+                return this._registered_associate_id;
+            }
+            set
+            {
+                this._registered_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updated")]
+        public System.DateTime Updated
+        {
+            get
+            {
+                return this._updated;
+            }
+            set
+            {
+                this._updated = value;
+            }
+        }
+
+        [ColumnInfo("updated_associate_id")]
+        public int UpdatedAssociateId
+        {
+            get
+            {
+                return this._updated_associate_id;
+            }
+            set
+            {
+                this._updated_associate_id = value;
+            }
+        }
+
+        [ColumnInfo("updatedCount")]
+        public int UpdatedCount
+        {
+            get
+            {
+                return this._updatedCount;
+            }
+            set
+            {
+                this._updatedCount = value;
+            }
+        }
+    }
+
+    [TableInfo("TagsGroupLink")]
+    public class TagsGroupLink : InfoBridge.SuperLinq.Core.ModelBase.IStandardModel
+    {
+
+        private int _tagsgrouplink_id;
+
+        private int _PK;
+
+        private int _tags_id;
+
+        private int _group_id;
+
+        private System.DateTime _registered;
+
+        private int _registered_associate_id;
+
+        private System.DateTime _updated;
+
+        private int _updated_associate_id;
+
+        private int _updatedCount;
+
+        [ColumnInfo("tagsgrouplink_id")]
+        public int TagsgrouplinkId
+        {
+            get
+            {
+                return this._tagsgrouplink_id;
+            }
+            set
+            {
+                this._tagsgrouplink_id = value;
+            }
+        }
+
+        [ColumnInfo("tagsgrouplink_id")]
+        public int PK
+        {
+            get
+            {
+                return this._PK;
+            }
+            set
+            {
+                this._PK = value;
+            }
+        }
+
+        [ColumnInfo("tags_id")]
+        public int TagsId
+        {
+            get
+            {
+                return this._tags_id;
+            }
+            set
+            {
+                this._tags_id = value;
+            }
+        }
+
+        [ColumnInfo("group_id")]
+        public int GroupId
+        {
+            get
+            {
+                return this._group_id;
+            }
+            set
+            {
+                this._group_id = value;
             }
         }
 

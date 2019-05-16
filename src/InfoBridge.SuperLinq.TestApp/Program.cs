@@ -23,6 +23,7 @@ namespace InfoBridge.SuperLinq.TestApp
                 ConfigFile.Services.RemoteBaseURL = ConfigurationManager.AppSettings["SoBaseUrl"];
                 using (SoSession.Authenticate(ConfigurationManager.AppSettings["SoUser"], ConfigurationManager.AppSettings["SoPass"]))
                 {
+                    var t = new Queryable<Ticket>().Where(x => x.Id == 48).First();
                     var r = new Queryable<Person>().Where(x => x.ContactId == 2).ToList();
                 }
             }

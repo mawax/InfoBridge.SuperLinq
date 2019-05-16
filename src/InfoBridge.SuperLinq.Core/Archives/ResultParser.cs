@@ -73,6 +73,11 @@ namespace InfoBridge.SuperLinq.Core.Archives
                         parsedValue = _dateTimeConverter.ConvertFromTimeZone(((DateTime)parsedValue).ToUniversalTime());
                     }
                 }
+                else if (column.PropertyType == typeof(int[]))
+                {
+                    //fix for incorrect value from SuperOffice Services
+                    if (parsedValue as string == "[A:]") { parsedValue = new int[0]; }
+                }
             }
             return parsedValue;
         }

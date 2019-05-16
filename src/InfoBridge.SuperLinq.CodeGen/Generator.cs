@@ -113,6 +113,9 @@ namespace InfoBridge.SuperLinq.CodeGen
                 case FieldDataType.dbUShort:
                     type = typeof(int); //web services supply us with int
                     break;
+                case FieldDataType.dbIntIdArr:
+                    type = typeof(int[]);
+                    break;
                 case FieldDataType.Undefined: break;
             }
 
