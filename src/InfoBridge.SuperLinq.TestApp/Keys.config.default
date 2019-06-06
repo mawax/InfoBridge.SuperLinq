@@ -2,6 +2,6 @@
 <appSettings>
   <add key="SoAppToken" value=""/>
   <add key="SoBaseUrl" value=""/>
-  <add key="SoUser" value=""/>
-  <add key="SoPass" value=""/>
+  <add key="SoUser" value=""/> <!--username or USEC (for SuperId accounts)-->
+  <add key="SoPass" value=""/> <!-- Leave empty when using USEC -->
 </appSettings>

@@ -29226,6 +29226,14 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _emailSubject;
 
+        private int _includeSignature;
+
+        private int _showCurrents;
+
+        private int _senderEmailMode;
+
+        private string _senderEmailAddress;
+
         [ColumnInfo("DocTmpl_id")]
         public int DocTmplId
         {
@@ -29587,6 +29595,58 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._emailSubject = value;
+            }
+        }
+
+        [ColumnInfo("includeSignature")]
+        public int IncludeSignature
+        {
+            get
+            {
+                return this._includeSignature;
+            }
+            set
+            {
+                this._includeSignature = value;
+            }
+        }
+
+        [ColumnInfo("showCurrents")]
+        public int ShowCurrents
+        {
+            get
+            {
+                return this._showCurrents;
+            }
+            set
+            {
+                this._showCurrents = value;
+            }
+        }
+
+        [ColumnInfo("senderEmailMode")]
+        public int SenderEmailMode
+        {
+            get
+            {
+                return this._senderEmailMode;
+            }
+            set
+            {
+                this._senderEmailMode = value;
+            }
+        }
+
+        [ColumnInfo("senderEmailAddress")]
+        public string SenderEmailAddress
+        {
+            get
+            {
+                return this._senderEmailAddress;
+            }
+            set
+            {
+                this._senderEmailAddress = value;
             }
         }
     }
@@ -101567,6 +101627,12 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _updatedCount;
 
+        private string _organizer_email;
+
+        private string _organizer_fullname;
+
+        private System.DateTime _recurring_end_date;
+
         [ColumnInfo("invitation_id")]
         public int InvitationId
         {
@@ -101707,6 +101773,45 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._updatedCount = value;
+            }
+        }
+
+        [ColumnInfo("organizer_email")]
+        public string OrganizerEmail
+        {
+            get
+            {
+                return this._organizer_email;
+            }
+            set
+            {
+                this._organizer_email = value;
+            }
+        }
+
+        [ColumnInfo("organizer_fullname")]
+        public string OrganizerFullname
+        {
+            get
+            {
+                return this._organizer_fullname;
+            }
+            set
+            {
+                this._organizer_fullname = value;
+            }
+        }
+
+        [ColumnInfo("recurring_end_date")]
+        public System.DateTime RecurringEndDate
+        {
+            get
+            {
+                return this._recurring_end_date;
+            }
+            set
+            {
+                this._recurring_end_date = value;
             }
         }
     }
