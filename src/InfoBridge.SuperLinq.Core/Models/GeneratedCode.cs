@@ -52245,6 +52245,14 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _orderByDirection;
 
+        private int _ownerTable;
+
+        private int _ownerRecord;
+
+        private int _group_id;
+
+        private string _configurationName;
+
         [ColumnInfo("SuperListColumnSize_id")]
         public int SuperListColumnSizeId
         {
@@ -52437,6 +52445,58 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._orderByDirection = value;
+            }
+        }
+
+        [ColumnInfo("ownerTable")]
+        public int OwnerTable
+        {
+            get
+            {
+                return this._ownerTable;
+            }
+            set
+            {
+                this._ownerTable = value;
+            }
+        }
+
+        [ColumnInfo("ownerRecord")]
+        public int OwnerRecord
+        {
+            get
+            {
+                return this._ownerRecord;
+            }
+            set
+            {
+                this._ownerRecord = value;
+            }
+        }
+
+        [ColumnInfo("group_id")]
+        public int GroupId
+        {
+            get
+            {
+                return this._group_id;
+            }
+            set
+            {
+                this._group_id = value;
+            }
+        }
+
+        [ColumnInfo("configurationName")]
+        public string ConfigurationName
+        {
+            get
+            {
+                return this._configurationName;
+            }
+            set
+            {
+                this._configurationName = value;
             }
         }
     }
