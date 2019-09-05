@@ -159,9 +159,9 @@ namespace InfoBridge.SuperLinq.Core.Projection
         {
             //extract our attribute and check if it exists
             ColumnInfo attr = (ColumnInfo)propertyInfo.GetCustomAttribute(typeof(ColumnInfo));
-            attr.PropertyType = propertyInfo.PropertyType;
             if (attr != null)
             {
+                attr.PropertyType = propertyInfo.PropertyType;
                 if (!columnMap.ContainsKey(propertyInfo.Name))
                 {
                     columnMap.Add(propertyInfo.Name, attr);
