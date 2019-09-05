@@ -16,6 +16,8 @@ namespace InfoBridge.SuperLinq.CodeGen
 {
     public class Generator
     {
+        public static readonly string[] EXCLUDED_TABLES = new[] { "syncusers", "syncsotask", "syncsocontact", "syncsoapp", "syncselection" };
+
         public CodeCompileUnit Build()
         {
             CodeCompileUnit compileUnit = new CodeCompileUnit();
@@ -113,6 +115,9 @@ namespace InfoBridge.SuperLinq.CodeGen
                 case FieldDataType.dbUShort:
                     type = typeof(int); //web services supply us with int
                     break;
+                case FieldDataType.dbIntIdArr:
+                    type = typeof(int[]);
+                    break;
                 case FieldDataType.Undefined: break;
             }
 
@@ -147,7 +152,7 @@ namespace InfoBridge.SuperLinq.CodeGen
 
         private bool IsExcluded(string table)
         {
-            return false;
+            return EXCLUDED_TABLES.Contains(table);
         }
 
         private string GetPrimaryKeyField(TableInfo ti)

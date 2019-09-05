@@ -12,5 +12,7 @@ namespace InfoBridge.SuperLinq.Tests.Unit.Helpers
     {
         [ColumnInfo("newid")]
         public override int Id { get; set; }
+
+        public string ExtraProperty { get; set; }
     }
 }

@@ -161,6 +161,7 @@ namespace InfoBridge.SuperLinq.Core.Projection
             ColumnInfo attr = (ColumnInfo)propertyInfo.GetCustomAttribute(typeof(ColumnInfo));
             if (attr != null)
             {
+                attr.PropertyType = propertyInfo.PropertyType;
                 if (!columnMap.ContainsKey(propertyInfo.Name))
                 {
                     columnMap.Add(propertyInfo.Name, attr);

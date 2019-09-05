@@ -10,6 +10,43 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Primarily SuperLinq is a LINQ provider for the NetServer Web Services, more specially for the ArchiveAgent. By default it utilizes the dynamic archive provider to query any table in the SuperOffice database but it can actually be used to query any archive provider.</description>
     <releaseNotes>
+1.0.21
+Fixed issue that occurred when using custom query models with properties that do not have ColumnInfo attributes
+
+
+1.0.20
+Added SuperOffice 8.5 R03 database changes and updated SuperOffice NuGet Packages to 8.5 R03 (8.5.7121.17)
+
+1.0.19
+Added SuperOffice 8.5 R02 database changes and updated SuperOffice NuGet Packages to 8.5 R02 (8.5.7093.18)
+Added comment in keys.config.default to clarify usage of USEC for login with SuperId accounts
+Added exclusion of several custom tables, which is not detectable anymore using the previous methods
+
+1.0.18
+Added SuperOffice 8.5 R01 database changes and updated SuperOffice NuGet Packages to 8.5 R01 (≈ 8.5.7072.907)
+Added support for new data type: Int array
+
+1.0.17
+Added SuperOffice 8.4 R08 database changes and updated SuperOffice NuGet Packages to 8.4 R08 (≈ 8.4.7038.15)
+
+1.0.16
+Added SuperOffice 8.4 R07 database changes and updated SuperOffice NuGet Packages to 8.4 R07 (8.4.7013.18)
+
+1.0.15
+Added SuperOffice 8.4 R06 database changes and updated SuperOffice NuGet Packages to 8.4 R06 (8.4.6981.14)
+
+1.0.14
+Added SuperOffice 8.4 R05 database changes and updated SuperOffice NuGet Packages to 8.4 R05 (8.4.6964.18)
+
+1.0.13
+Added support for loading column configuration from a custom class by specifiying a configProviderClass in ColumnInfo
+
+1.0.12
+Updated SuperOffice NuGet Packages to 8.4.6907.14 ≈ 8.4 R04 (which is 8.4.6915.14)
+
+1.0.11
+Added SuperOffice 8.4 R03 database changes and updated SuperOffice NuGet Packages to 8.4 R03 (8.4.6883.1105)
+
 1.0.10
 Added SuperOffice 8.4 R02 changes and updated SuperOffice NuGet Packages to 8.4 R02 (8.4.6850.14)
 Added optional parameters to Queryable and SimpleQueryable contructors to specify which entities should be fetched from the SuperOffice archive
