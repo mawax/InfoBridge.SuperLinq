@@ -100695,6 +100695,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _form_key;
 
+        private int _new_ticket;
+
         [ColumnInfo("form_id")]
         public int FormId
         {
@@ -100952,6 +100954,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._form_key = value;
+            }
+        }
+
+        [ColumnInfo("new_ticket")]
+        public int NewTicket
+        {
+            get
+            {
+                return this._new_ticket;
+            }
+            set
+            {
+                this._new_ticket = value;
             }
         }
     }
