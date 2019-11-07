@@ -89,13 +89,13 @@
       <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7214.17\lib\net471\SoMail.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.CD.DSL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7214.17\lib\net471\SuperOffice.CD.DSL.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7227.16\lib\net471\SuperOffice.CD.DSL.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.CD.DSL.Database, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7214.17\lib\net471\SuperOffice.CD.DSL.Database.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7227.16\lib\net471\SuperOffice.CD.DSL.Database.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.CD.DSL.Implementation, Version=8.5.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7214.17\lib\net471\SuperOffice.CD.DSL.Implementation.dll</HintPath>
+      <HintPath>..\..\packages\SuperOffice.ContinuousDatabase.8.5.7227.16\lib\net471\SuperOffice.CD.DSL.Implementation.dll</HintPath>
     </Reference>
     <Reference Include="SuperOffice.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bdda2d694ae22a86, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SuperOffice.NetServer.Core.8.5.7185.18\lib\net471\SuperOffice.Contracts.dll</HintPath>
