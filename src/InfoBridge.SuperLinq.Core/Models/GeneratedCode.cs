@@ -96826,6 +96826,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _registered_by;
 
+        private int _Rank;
+
         [ColumnInfo("Favourite_id")]
         public int FavouriteId
         {
@@ -96927,6 +96929,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._registered_by = value;
+            }
+        }
+
+        [ColumnInfo("Rank")]
+        public int Rank
+        {
+            get
+            {
+                return this._Rank;
+            }
+            set
+            {
+                this._Rank = value;
             }
         }
     }
