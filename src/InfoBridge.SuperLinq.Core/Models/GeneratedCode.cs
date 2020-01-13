@@ -3084,6 +3084,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _isMilestone;
 
+        private int _cautionWarning;
+
         [ColumnInfo("appointment_id")]
         public int AppointmentId
         {
@@ -3694,6 +3696,19 @@ namespace InfoBridge.SuperLinq.Core.Models
                 this._isMilestone = value;
             }
         }
+
+        [ColumnInfo("cautionWarning")]
+        public int CautionWarning
+        {
+            get
+            {
+                return this._cautionWarning;
+            }
+            set
+            {
+                this._cautionWarning = value;
+            }
+        }
     }
 
     [TableInfo("document")]
@@ -3739,6 +3754,8 @@ namespace InfoBridge.SuperLinq.Core.Models
         private int _userdef_id;
 
         private int _userdef2_id;
+
+        private int _snum;
 
         [ColumnInfo("document_id")]
         public int DocumentId
@@ -3997,6 +4014,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._userdef2_id = value;
+            }
+        }
+
+        [ColumnInfo("snum")]
+        public int Snum
+        {
+            get
+            {
+                return this._snum;
+            }
+            set
+            {
+                this._snum = value;
             }
         }
     }
@@ -71317,6 +71347,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private System.DateTime _dbi_last_modified;
 
+        private int _attachment_location_id;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -71457,6 +71489,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._dbi_last_modified = value;
+            }
+        }
+
+        [ColumnInfo("attachment_location_id")]
+        public int AttachmentLocationId
+        {
+            get
+            {
+                return this._attachment_location_id;
+            }
+            set
+            {
+                this._attachment_location_id = value;
             }
         }
     }
@@ -81392,6 +81437,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _sms;
 
+        private int _status;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -81467,6 +81514,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._sms = value;
+            }
+        }
+
+        [ColumnInfo("status")]
+        public int Status
+        {
+            get
+            {
+                return this._status;
+            }
+            set
+            {
+                this._status = value;
             }
         }
     }
