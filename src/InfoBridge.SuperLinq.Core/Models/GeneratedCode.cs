@@ -65198,6 +65198,14 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _important;
 
+        private string _language;
+
+        private int _sentiment;
+
+        private int _sentimentConfidence;
+
+        private int _suggestedCategory_id;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -65507,6 +65515,58 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._important = value;
+            }
+        }
+
+        [ColumnInfo("language")]
+        public string Language
+        {
+            get
+            {
+                return this._language;
+            }
+            set
+            {
+                this._language = value;
+            }
+        }
+
+        [ColumnInfo("sentiment")]
+        public int Sentiment
+        {
+            get
+            {
+                return this._sentiment;
+            }
+            set
+            {
+                this._sentiment = value;
+            }
+        }
+
+        [ColumnInfo("sentimentConfidence")]
+        public int SentimentConfidence
+        {
+            get
+            {
+                return this._sentimentConfidence;
+            }
+            set
+            {
+                this._sentimentConfidence = value;
+            }
+        }
+
+        [ColumnInfo("suggestedCategory_id")]
+        public int SuggestedCategoryId
+        {
+            get
+            {
+                return this._suggestedCategory_id;
+            }
+            set
+            {
+                this._suggestedCategory_id = value;
             }
         }
     }
