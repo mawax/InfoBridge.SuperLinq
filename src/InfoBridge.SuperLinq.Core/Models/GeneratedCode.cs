@@ -29264,6 +29264,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private string _senderEmailAddress;
 
+        private int _invitationDocType;
+
         [ColumnInfo("DocTmpl_id")]
         public int DocTmplId
         {
@@ -29677,6 +29679,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._senderEmailAddress = value;
+            }
+        }
+
+        [ColumnInfo("invitationDocType")]
+        public int InvitationDocType
+        {
+            get
+            {
+                return this._invitationDocType;
+            }
+            set
+            {
+                this._invitationDocType = value;
             }
         }
     }
@@ -101843,6 +101858,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private System.DateTime _recurring_end_date;
 
+        private System.DateTime _recurring_start_date;
+
         [ColumnInfo("invitation_id")]
         public int InvitationId
         {
@@ -102022,6 +102039,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._recurring_end_date = value;
+            }
+        }
+
+        [ColumnInfo("recurring_start_date")]
+        public System.DateTime RecurringStartDate
+        {
+            get
+            {
+                return this._recurring_start_date;
+            }
+            set
+            {
+                this._recurring_start_date = value;
             }
         }
     }
