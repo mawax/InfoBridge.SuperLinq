@@ -67738,6 +67738,8 @@ namespace InfoBridge.SuperLinq.Core.Models
 
         private int _autofaq_kb_category;
 
+        private int _mailgun_dsn;
+
         [ColumnInfo("id")]
         public int Id
         {
@@ -68047,6 +68049,19 @@ namespace InfoBridge.SuperLinq.Core.Models
             set
             {
                 this._autofaq_kb_category = value;
+            }
+        }
+
+        [ColumnInfo("mailgun_dsn")]
+        public int MailgunDsn
+        {
+            get
+            {
+                return this._mailgun_dsn;
+            }
+            set
+            {
+                this._mailgun_dsn = value;
             }
         }
     }
