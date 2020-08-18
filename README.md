@@ -1,3 +1,5 @@
+This project is archived and no longer maintained.
+
 # Query provider for SuperOffice CRM (SuperLinq)
 SuperLinq is a (linq) query provider for [SuperOffice CRM](http://www.superoffice.com). 
 The goal of the library is to make querying with the NetServer Web Services a lot easier, more straightforward and with less code. 
@@ -23,6 +25,3 @@ Check out the [wiki](https://github.com/mawax/InfoBridge.SuperLinq/wiki) for doc
 
 ## License
 SuperLinq is released under the MIT License.
-
-## InfoBridge Software B.V.
-SuperLinq is an [InfoBridge Software B.V.](http://www.infobridge.com) project.
